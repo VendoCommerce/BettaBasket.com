@@ -31,6 +31,15 @@ namespace CSWeb.UserControls {
         protected global::System.Web.UI.WebControls.Panel pnlReceiptPage;
         
         /// <summary>
+        /// litGAReceiptPixel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litGAReceiptPixel;
+        
+        /// <summary>
         /// pnlContactPage control.
         /// </summary>
         /// <remarks>
@@ -56,33 +65,6 @@ namespace CSWeb.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel PnlCartPage;
-        
-        /// <summary>
-        /// Pixel_GA control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Pixel_GA;
-        
-        /// <summary>
-        /// Pixel_GA_Tracker control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Pixel_GA_Tracker;
-        
-        /// <summary>
-        /// Pixel_HitsLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Pixel_HitsLink;
         
         /// <summary>
         /// Pixel_SiteCatalyst control.

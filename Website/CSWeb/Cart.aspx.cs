@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace CSWeb
 {
-    public partial class Cart : System.Web.UI.Page
+    public partial class Cart : CSWebBase.SiteBasePage
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected override void Page_Load(object sender, EventArgs e)
         {
-
+            base.Page_Load(sender, e);
         }
     }
 }

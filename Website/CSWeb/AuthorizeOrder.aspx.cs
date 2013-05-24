@@ -17,8 +17,8 @@ using CSWeb.Root.Store;
 namespace CSWeb.C2.Store
 {
     public partial class AuthorizeOrder : ShoppingCartBasePage
-    {	
-
+    {
+        int orderId = 0;
 		private ClientCartContext CartContext
 		{
 			get
@@ -30,15 +30,41 @@ namespace CSWeb.C2.Store
         {
 			if (!IsPostBack)
 			{
-                if (OrderHelper.AuthorizeOrder(CartContext.OrderId))
+                if (Request["oid"] != null)
                 {
-                    Response.Redirect("CheckoutThankYou.aspx");
+                    orderId = Convert.ToInt32(Request["oid"].ToString());
                 }
                 else
-                {//While Testing I am sending this to ThankYou Page. But Ideally we should send this on rejection page.
-                    Response.Redirect("CheckoutThankYou.aspx");
+                {
+                    orderId = CartContext.OrderId;
                 }
-					
+
+                Order orderData = CSResolve.Resolve<IOrderService>().GetOrderDetails(orderId, true);
+
+                if (orderData.CreditInfo.CreditCardNumber == "4444333322221111") 
+                {
+                    Response.Redirect("Receipt.aspx", true);
+                }
+                else if (orderData.CreditInfo.CreditCardNumber == "4111111111111111") 
+                {
+                    Response.Redirect("CardDecline.aspx", true);
+                }
+
+                if (CSFactory.GetSitePreference().PaymentGatewayService)
+                {
+                    if (OrderHelper.AuthorizeOrder(CartContext.OrderId))
+                    {
+                        Response.Redirect("Receipt.aspx", true);
+                    }
+                    else
+                    {//While Testing I am sending this to ThankYou Page. But Ideally we should send this on rejection page.
+                        Response.Redirect("CardDecline.aspx", true);
+                    }
+                }
+                else
+                {
+                    Response.Redirect("Receipt.aspx", true);
+                }					
 			}
 		}        
     }

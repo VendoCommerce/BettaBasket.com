@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace CSWeb
 {
-    public partial class Privacy : System.Web.UI.Page
+    public partial class Privacy : CSWebBase.SiteBasePage
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected override void Page_Load(object sender, EventArgs e)
         {
-
+            base.Page_Load(sender, e);
         }
     }
 }

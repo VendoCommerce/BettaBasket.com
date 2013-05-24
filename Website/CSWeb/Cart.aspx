@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="CSWeb.Cart" EnableSessionState="True" %>
 <%@ Register TagPrefix="uc" TagName="BillingCreditForm" Src="~/UserControls/BillingCreditForm.ascx" %>
+<%@ Register Src="UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -15,5 +16,7 @@
 
     </div>
     </form>
+
+    <uc:TrackingPixels runat="server" />
 </body>
 </html>

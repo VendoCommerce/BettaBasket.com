@@ -1,4 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CardDecline.aspx.cs" Inherits=" CSWeb.C2.Store.CardDecline" %>
+<%@ Register Src="UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -12,5 +14,7 @@
         Card Denied
     </div>
     </form>
+
+    <uc:TrackingPixels runat="server" />
 </body>
 </html>

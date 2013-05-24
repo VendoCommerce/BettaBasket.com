@@ -94,8 +94,7 @@ namespace CSWeb.UserControls
                 orderId = CartContext != null ? CartContext.OrderId : 0;
             }
             versionName = CSWeb.OrderHelper.GetVersionName();
-
-            HideShowPixels();
+                        
             SetContactPagePanel();
             SetPnlCartPage();
             SetpnlReceiptPage();
@@ -108,8 +107,7 @@ namespace CSWeb.UserControls
 
             if (url.EndsWith("/contact.aspx"))
             {
-                pnlContactPage.Visible = true;
-
+                pnlContactPage.Visible = true;                
             }
             else
             {
@@ -158,7 +156,8 @@ namespace CSWeb.UserControls
             if (url.EndsWith("/receipt.aspx"))
             {
                 pnlReceiptPage.Visible = true;
-
+                SetCurrentOrder();
+                WriteGAPixel();
             }
             else
             {
@@ -176,30 +175,6 @@ namespace CSWeb.UserControls
         protected string GetOrderId()
         {
             return OrderId;
-        }
-
-        private void HideShowPixels()
-        {
-            string url = Request.Url.AbsolutePath.ToLower();            
-            Pixel_HitsLink.Visible = true;
-            Pixel_SiteCatalyst.Visible = true;
-            Pixel_GA.Visible = true;
-
-            if (url.EndsWith("/receipt.aspx") || url.EndsWith("/receiptfriendly.aspx"))
-            {
-                SetCurrentOrder();
-
-                if (CurrentOrder != null && CurrentOrder.CreditInfo != null && CurrentOrder.CreditInfo.CreditCardNumber != null)
-                    if ((CurrentOrder.CreditInfo.CreditCardNumber.Equals("4444333322221111")) // testing params
-                        ||
-                        (CurrentOrder.OrderStatusId == 4)) // auth success
-                    {
-                        WriteGAPixel();
-
-                        Pixel_GA.Visible = false;
-                        Pixel_GA_Tracker.Visible = true;
-                    }
-            }
         }
 
         private string GetEncodedJS(string str)
@@ -224,11 +199,11 @@ namespace CSWeb.UserControls
             foreach (Sku sku in CurrentOrder.SkuItems)
             {
                 sbGAPixel.AppendFormat("pageTracker._addItem('{0}','{1}','{2}','{3}','{4}','{5}');\n",
-                    CurrentOrder.OrderId.ToString(), GetEncodedJS(sku.SkuCode), GetEncodedJS(sku.LongDescription), "",
+                    CurrentOrder.OrderId.ToString(), GetEncodedJS(sku.SkuCode), GetEncodedJS(sku.Title), "",
                     Math.Round(Convert.ToDouble(sku.InitialPrice), 2), sku.Quantity.ToString());
             }
 
-            //litGAReceiptPixel.Text = sbGAPixel.ToString();
+            litGAReceiptPixel.Text = sbGAPixel.ToString();
         }
 
         private void SetCurrentOrder()

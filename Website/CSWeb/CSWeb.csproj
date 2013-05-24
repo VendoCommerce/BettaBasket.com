@@ -169,6 +169,34 @@
     <Content Include="Admin\VersionReport.aspx" />
     <Content Include="AuthorizeOrder.aspx" />
     <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="Canada\CA_A1\AddProduct.aspx" />
+    <Content Include="Canada\CA_A1\AuthorizeOrder.aspx" />
+    <Content Include="Canada\CA_A1\CardDecline.aspx" />
+    <Content Include="Canada\CA_A1\Cart.aspx" />
+    <Content Include="Canada\CA_A1\CheckoutExpired.aspx" />
+    <Content Include="Canada\CA_A1\CheckoutSessionExpired.aspx" />
+    <Content Include="Canada\CA_A1\Contact.aspx" />
+    <Content Include="Canada\CA_A1\HowItWorks.aspx" />
+    <Content Include="Canada\CA_A1\index.aspx" />
+    <Content Include="Canada\CA_A1\PostSale.aspx" />
+    <Content Include="Canada\CA_A1\Privacy.aspx" />
+    <Content Include="Canada\CA_A1\Receipt.aspx" />
+    <Content Include="Canada\CA_A1\ReceiptFriendly.aspx" />
+    <Content Include="Canada\CA_A1\Returns.aspx" />
+    <Content Include="Canada\CA_A1\Testimonials.aspx" />
+    <Content Include="Canada\CA_A1\UserControls\AddedToCartPopup.ascx" />
+    <Content Include="Canada\CA_A1\UserControls\BillingCreditForm.ascx" />
+    <Content Include="Canada\CA_A1\UserControls\CardDecline.ascx" />
+    <Content Include="Canada\CA_A1\UserControls\CheckoutThankYouModule.ascx" />
+    <Content Include="Canada\CA_A1\UserControls\CheckoutThankYouPrint.ascx" />
+    <Content Include="Canada\CA_A1\UserControls\Contact.ascx" />
+    <Content Include="Canada\CA_A1\UserControls\DateControl.ascx" />
+    <Content Include="Canada\CA_A1\UserControls\Footer.ascx" />
+    <Content Include="Canada\CA_A1\UserControls\Header.ascx" />
+    <Content Include="Canada\CA_A1\UserControls\ShippingForm.ascx" />
+    <Content Include="Canada\CA_A1\UserControls\ShoppingCartControl.ascx" />
+    <Content Include="Canada\CA_A1\UserControls\SiteCatalystPixel.ascx" />
+    <Content Include="Canada\CA_A1\UserControls\TrackingPixels.ascx" />
     <Content Include="CardDecline.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Content\Images\admin\add.gif" />
@@ -271,6 +299,7 @@
     <Content Include="Receipt.aspx" />
     <Content Include="ReceiptFriendly.aspx" />
     <Content Include="Returns.aspx" />
+    <Content Include="Scripts\autoTab.js" />
     <Content Include="Scripts\fancybox\blank.gif" />
     <Content Include="Scripts\fancybox\fancybox_loading.gif" />
     <Content Include="Scripts\fancybox\fancybox_sprite.png" />
@@ -282,6 +311,11 @@
     <Content Include="Scripts\fancybox\jquery.fancybox.css" />
     <Content Include="Scripts\fancybox\jquery.fancybox.js" />
     <Content Include="Scripts\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\global.js" />
+    <Content Include="Scripts\jquery.cycle.all.js" />
+    <Content Include="Scripts\ping.js" />
+    <Content Include="Scripts\snippet.js" />
+    <Content Include="Scripts\s_code.js" />
     <Content Include="Styles\admin.css" />
     <Content Include="Styles\cart_styles.css" />
     <Content Include="Styles\global.css" />
@@ -333,7 +367,6 @@
     <Content Include="UserControls\ShoppingCartControl.ascx" />
     <Content Include="UserControls\SiteCatalystPixel.ascx" />
     <Content Include="UserControls\TrackingPixels.ascx" />
-    <Content Include="UserControls\VerticalPane.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -695,6 +728,199 @@
     <Compile Include="AuthorizeOrder.aspx.designer.cs">
       <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Canada\CA_A1\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\AuthorizeOrder.aspx.cs">
+      <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\AuthorizeOrder.aspx.designer.cs">
+      <DependentUpon>AuthorizeOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\CardDecline.aspx.cs">
+      <DependentUpon>CardDecline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\CardDecline.aspx.designer.cs">
+      <DependentUpon>CardDecline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\CheckoutExpired.aspx.cs">
+      <DependentUpon>CheckoutExpired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\CheckoutExpired.aspx.designer.cs">
+      <DependentUpon>CheckoutExpired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\CheckoutSessionExpired.aspx.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\CheckoutSessionExpired.aspx.designer.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\HowItWorks.aspx.cs">
+      <DependentUpon>HowItWorks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\HowItWorks.aspx.designer.cs">
+      <DependentUpon>HowItWorks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\PostSale.aspx.cs">
+      <DependentUpon>PostSale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\PostSale.aspx.designer.cs">
+      <DependentUpon>PostSale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\Privacy.aspx.cs">
+      <DependentUpon>Privacy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\Privacy.aspx.designer.cs">
+      <DependentUpon>Privacy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\Receipt.aspx.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\Receipt.aspx.designer.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\ReceiptFriendly.aspx.cs">
+      <DependentUpon>ReceiptFriendly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\ReceiptFriendly.aspx.designer.cs">
+      <DependentUpon>ReceiptFriendly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\Returns.aspx.cs">
+      <DependentUpon>Returns.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\Returns.aspx.designer.cs">
+      <DependentUpon>Returns.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\Testimonials.aspx.cs">
+      <DependentUpon>Testimonials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\Testimonials.aspx.designer.cs">
+      <DependentUpon>Testimonials.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\AddedToCartPopup.ascx.cs">
+      <DependentUpon>AddedToCartPopup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\AddedToCartPopup.ascx.designer.cs">
+      <DependentUpon>AddedToCartPopup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\BillingCreditForm.ascx.cs">
+      <DependentUpon>BillingCreditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\BillingCreditForm.ascx.designer.cs">
+      <DependentUpon>BillingCreditForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\CardDecline.ascx.cs">
+      <DependentUpon>CardDecline.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\CardDecline.ascx.designer.cs">
+      <DependentUpon>CardDecline.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\CheckoutThankYouModule.ascx.cs">
+      <DependentUpon>CheckoutThankYouModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\CheckoutThankYouModule.ascx.designer.cs">
+      <DependentUpon>CheckoutThankYouModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\CheckoutThankYouPrint.ascx.cs">
+      <DependentUpon>CheckoutThankYouPrint.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\CheckoutThankYouPrint.ascx.designer.cs">
+      <DependentUpon>CheckoutThankYouPrint.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\Contact.ascx.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\Contact.ascx.designer.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\DateControl.ascx.cs">
+      <DependentUpon>DateControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\DateControl.ascx.designer.cs">
+      <DependentUpon>DateControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\ShippingForm.ascx.cs">
+      <DependentUpon>ShippingForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\ShippingForm.ascx.designer.cs">
+      <DependentUpon>ShippingForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\ShoppingCartControl.ascx.cs">
+      <DependentUpon>ShoppingCartControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\ShoppingCartControl.ascx.designer.cs">
+      <DependentUpon>ShoppingCartControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\SiteCatalystPixel.ascx.cs">
+      <DependentUpon>SiteCatalystPixel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\SiteCatalystPixel.ascx.designer.cs">
+      <DependentUpon>SiteCatalystPixel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\TrackingPixels.ascx.cs">
+      <DependentUpon>TrackingPixels.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canada\CA_A1\UserControls\TrackingPixels.ascx.designer.cs">
+      <DependentUpon>TrackingPixels.ascx</DependentUpon>
+    </Compile>
     <Compile Include="CardDecline.aspx.cs">
       <DependentUpon>CardDecline.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -905,13 +1131,6 @@
     </Compile>
     <Compile Include="UserControls\TrackingPixels.ascx.designer.cs">
       <DependentUpon>TrackingPixels.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\VerticalPane.ascx.cs">
-      <DependentUpon>VerticalPane.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserControls\VerticalPane.ascx.designer.cs">
-      <DependentUpon>VerticalPane.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

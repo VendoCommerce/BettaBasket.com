@@ -16,7 +16,6 @@ using CSBusiness.Preference;
 using CSCore.DataHelper;
 using System.Xml;
 using CSBusiness.FulfillmentHouse;
-using System.Collections;
 
 
 /// <summary>
@@ -32,21 +31,24 @@ namespace CSWeb
         {
             Request _request = new Request();
 
-            Order orderData = CSResolve.Resolve<IOrderService>().GetOrderDetails(orderID, true);           
+            Order orderData = CSResolve.Resolve<IOrderService>().GetOrder(orderID);
 
-            _request.CardNumber = orderData.CreditInfo.CreditCardNumber;
-            _request.CardCvv = orderData.CreditInfo.CreditCardCSC;
+            double Amount = (double)orderData.Total;
+
+            _request.CardNumber = "4111111111111111";
+            _request.CardCvv = "1111";
             _request.CurrencyCode = "$";
-            _request.ExpireDate = orderData.CreditInfo.CreditCardExpired;
-            _request.Amount = (double)orderData.Total;
+            DateTime expireDate = DateTime.MinValue;
+            DateTime.TryParse("2014-11-01", out expireDate);
+            _request.ExpireDate = expireDate;
+            _request.Amount = Amount;
             _request.FirstName = orderData.CustomerInfo.BillingAddress.FirstName;
             _request.LastName = orderData.CustomerInfo.BillingAddress.LastName;
             _request.Address1 = orderData.CustomerInfo.BillingAddress.Address1;
             _request.City = orderData.CustomerInfo.BillingAddress.City;
             _request.State = StateManager.GetStateName(orderData.CustomerInfo.BillingAddress.StateProvinceId);
-            _request.Country = CountryManager.CountryCode(orderData.CustomerInfo.BillingAddress.CountryId);
             _request.ZipCode = orderData.CustomerInfo.BillingAddress.ZipPostalCode;
-            _request.TransactionDescription = orderData.CustomerInfo.BillingAddress.FirstName + " " + orderData.CustomerInfo.BillingAddress.LastName;
+            _request.TransactionDescription = orderData.CustomerInfo.BillingAddress.FirstName + " " + orderData.CustomerInfo.BillingAddress.LastName + " TryNono.com - CS";
             _request.CustomerID = orderData.CustomerId.ToString();
             _request.InvoiceNumber = orderData.OrderId.ToString();
 
@@ -59,89 +61,30 @@ namespace CSWeb
 
             if (_response != null && _response.ResponseType != TransactionResponseType.Approved)
             {
-                CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID, _response.AuthCode, 7);
+                CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID, _response.AuthCode, 5);
+
 
                 return false;
             }
             else if (_response != null && _response.ResponseType == TransactionResponseType.Approved)
             {
-                CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID, _response.AuthCode, 4);
+                CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID, _response.AuthCode, 2);
                 return true;
             }
 
             return true;
+
+
         }
-
-        public static bool ValidationCheck(int orderID)
-        {
-            Request _request = new Request();
-
-            Order orderData = CSResolve.Resolve<IOrderService>().GetOrderDetails(orderID, true);
-            List<StateProvince> states = StateManager.GetAllStates(0);
-            _request.CardNumber = orderData.CreditInfo.CreditCardNumber;
-            _request.CardCvv = orderData.CreditInfo.CreditCardCSC;
-            _request.CurrencyCode = "$";
-            _request.ExpireDate = orderData.CreditInfo.CreditCardExpired;
-            _request.Amount = (double)orderData.Total;
-            _request.FirstName = orderData.CustomerInfo.BillingAddress.FirstName;
-            _request.LastName = orderData.CustomerInfo.BillingAddress.LastName;
-            _request.Address1 = orderData.CustomerInfo.BillingAddress.Address1;
-            _request.City = orderData.CustomerInfo.BillingAddress.City;
-            StateProvince itemStateProvince = states.FirstOrDefault(x => x.StateProvinceId == Convert.ToInt32(orderData.CustomerInfo.BillingAddress.StateProvinceId));
-            if (itemStateProvince != null)
-            {
-                _request.State = itemStateProvince.Abbreviation.Trim();
-                
-            }
-            
-            _request.Country = CountryManager.CountryCode(orderData.CustomerInfo.BillingAddress.CountryId).Trim();
-            _request.ZipCode = orderData.CustomerInfo.BillingAddress.ZipPostalCode;
-            _request.TransactionDescription = orderData.CustomerInfo.BillingAddress.FirstName + " " + orderData.CustomerInfo.BillingAddress.LastName;
-            _request.CustomerID = orderData.CustomerId.ToString();
-            _request.InvoiceNumber = orderData.OrderId.ToString();
-
-            _request.ShipToFirstName = orderData.CustomerInfo.ShippingAddress.FirstName;
-            _request.ShipToLastName = orderData.CustomerInfo.ShippingAddress.LastName;
-            _request.ShipToAddress = orderData.CustomerInfo.ShippingAddress.Address1;
-            StateProvince itemStateProvince1 = states.FirstOrDefault(x => x.StateProvinceId == Convert.ToInt32(orderData.CustomerInfo.ShippingAddress.StateProvinceId));
-            if (itemStateProvince != null)
-            {
-                _request.ShipToState = itemStateProvince1.Abbreviation.Trim();
-
-            }
-            //_request.ShipToState = StateManager.GetStateName(orderData.CustomerInfo.ShippingAddress.StateProvinceId);
-            _request.ShipToZipCode = orderData.CustomerInfo.ShippingAddress.ZipPostalCode;
-            _request.ShipToCity = orderData.CustomerInfo.ShippingAddress.City;
-            _request.IPAddress = orderData.IpAddress;
-            _request.Phone = orderData.CustomerInfo.BillingAddress.PhoneNumber;
-
-           
-            _request.ShipToCountry = CountryManager.CountryCode(orderData.CustomerInfo.ShippingAddress.CountryId).Trim();
-            
-            _request.Email = orderData.Email;
-
-            
-            Response _response = PaymentProviderRepository.Instance.Get().PerformValidationRequest(_request);
-
-
-            if (_response != null && _response.ResponseType != TransactionResponseType.Approved)
-            {
-                CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID, _response.AuthCode, 7);
-
-                return false;
-            }
-            else if (_response != null && _response.ResponseType == TransactionResponseType.Approved)
-            {
-                CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID, _response.AuthCode, 4);
-                return true;
-            }
-
-            return true;
-        }
-
         #endregion Order Validation
 
         #region Emails
+
+        public static string ReplaceSiteName(string data)
+        {
+            return data.Replace("{SITE_NAME}", "BettaBasket.com");
+        }
+
         public static bool SendOrderCompletedEmail(int orderId)
         {
             //pull Specific Email Template
@@ -155,7 +98,7 @@ namespace CSWeb
             if (emailTemplate.Body != null)
             {
                 //Subject Translation
-                emailTemplate.Subject = emailTemplate.Subject.Replace("{ORDER_NUMBER}", orderData.OrderId.ToString());
+                emailTemplate.Subject = ReplaceSiteName(emailTemplate.Subject.Replace("{ORDER_NUMBER}", orderData.OrderId.ToString()));
 
                 //Body Translation
                 String BodyTemplate = emailTemplate.Body.Replace("&", "&amp;");
@@ -167,6 +110,8 @@ namespace CSWeb
                 BodyTemplate = BodyTemplate.Replace("{ORDER_ID}", orderData.OrderId.ToString());
                 BodyTemplate = BodyTemplate.Replace("{ORDER_NUMBER}", orderData.OrderId.ToString());
                 BodyTemplate = BodyTemplate.Replace("{ORDER_DATE}", orderData.CreatedDate.ToString("dd MMM yyyy hh:mm:ss"));
+                BodyTemplate = BodyTemplate.Replace("{COUPON_CODE}", Convert.ToString(orderData.DiscountCode ?? string.Empty).ToUpper());
+                BodyTemplate = ReplaceSiteName(BodyTemplate);
 
                 CSBusiness.CustomerManagement.Address billing = orderData.CustomerInfo.BillingAddress;
                 if (billing != null)
@@ -210,16 +155,18 @@ namespace CSWeb
                 {
                     string originalString = node.ToString();
 
-                    int totalSkuItems = orderData.SkuItems.Count;
+                    List<Sku> skuItems = orderData.SkuItems;
+
+                    int totalSkuItems = skuItems.Count;
                     for (int i = 0; i < totalSkuItems; i++)
                     {
-                        Sku sku = orderData.SkuItems[i];
+                        Sku sku = skuItems[i];
                         string resultString = originalString;
                         resultString = resultString
-                            .Replace("{SKU}", sku.SkuCode)
+                            .Replace("{SKU}", sku.Title + "<br/>" + sku.SkuCode)
                             .Replace("{SKU_QTY}", sku.Quantity.ToString())
                             .Replace("{SKU_DESCR}", sku.LongDescription)
-                            .Replace("{SKU_PRICE}", sku.FullPrice.ToString("N2"));
+                            .Replace("{SKU_PRICE}", sku.TotalPrice.ToString("C"));
 
                         sb.Append(resultString);
                     }
@@ -232,7 +179,7 @@ namespace CSWeb
                 try
                 {
                     //Prepare Mail Message
-                    MailMessage _oMailMessage = new MailMessage(emailTemplate.FromAddress, orderData.Email, emailTemplate.Subject, BodyTemplate);
+                    MailMessage _oMailMessage = new MailMessage(ReplaceSiteName(emailTemplate.FromAddress), orderData.Email, emailTemplate.Subject, BodyTemplate);
                     _oMailMessage.IsBodyHtml = true;
                     SendMail(_oMailMessage);
                     //Fire OrderConfirmation Log
@@ -258,14 +205,14 @@ namespace CSWeb
             {
                 //Body Translation
                 String BodyTemplate = emailTemplate.Body.Replace("&", "&amp;");
-                BodyTemplate = BodyTemplate.Replace("{OrderId}", orderId.ToString());            
+                BodyTemplate = BodyTemplate.Replace("{OrderId}", orderId.ToString());
                 BodyTemplate = BodyTemplate.Replace("&amp;", "&");
                 try
                 {
                     //Prepare Mail Message
                     MailMessage _oMailMessage = new MailMessage(emailTemplate.FromAddress, emailTemplate.ToAddress, emailTemplate.Subject, BodyTemplate);
                     _oMailMessage.IsBodyHtml = true;
-                    SendMail(_oMailMessage);                    
+                    SendMail(_oMailMessage);
                     return true;
                 }
                 catch (Exception)
@@ -292,6 +239,8 @@ namespace CSWeb
                 //Body Translation
                 String BodyTemplate = emailTemplate.Body.Replace("&", "&amp;");
 
+                BodyTemplate = ReplaceSiteName(BodyTemplate);
+
                 CSBusiness.CustomerManagement.Address billing = orderData.CustomerInfo.BillingAddress;
                 if (billing != null)
                 {
@@ -306,7 +255,7 @@ namespace CSWeb
                 try
                 {
                     //Prepare Mail Message
-                    MailMessage _oMailMessage = new MailMessage(emailTemplate.FromAddress, orderData.Email, emailTemplate.Subject, BodyTemplate);
+                    MailMessage _oMailMessage = new MailMessage(ReplaceSiteName(emailTemplate.FromAddress), orderData.Email, emailTemplate.Subject, BodyTemplate);
                     _oMailMessage.IsBodyHtml = true;
                     SendMail(_oMailMessage);
                     //Fire OrderDecline Log
@@ -409,6 +358,11 @@ namespace CSWeb
             return versionId;
         }
 
+        public static string GetVersionName()
+        {
+            return (CSFactory.GetCacheSitePref()).VersionItems.First(x => { return x.VersionId == GetVersion(); }).Title.ToUpper();
+        }
+
         public static XmlNode GetDefaultFulFillmentHouseConfig()
         {
             XmlDocument doc = new XmlDocument();
@@ -450,292 +404,5 @@ namespace CSWeb
             }
             return null;
         }
-
-        public static string GetVersionName()
-        {
-            return "A1";
-        }
-        public static bool AuthorizeOrderWithPayPalAdaptive(int orderID, Hashtable RequestData, out Hashtable ResponseData)
-        {
-            // Consider setting up below params
-            //Hashtable htAdditinalInfo = new Hashtable();
-            //htAdditinalInfo.Add("ReturnUrl", "https://cart.conversionsystems.com/about.aspx?orderid=1000");
-            //htAdditinalInfo.Add("CancelUrl", "https://www.canurrl.com");
-            //htAdditinalInfo.Add("Memo", "Test");
-            //htAdditinalInfo.Add("IpnNotificationUrl", "https://cart.conversionsystems.com/about.aspx?orderid=1000");
-            //htAdditinalInfo.Add("ActionType", "SetPaymentOptions");
-            //htAdditinalInfo.Add("PayKey", "");
-            //htAdditinalInfo.Add("ActionType", "PaymentDetails");
-
-            Request _request = new Request();
-            Order orderData = CSResolve.Resolve<IOrderService>().GetOrderDetails(orderID, true);
-
-            _request.AdditionalInfo = RequestData;
-            _request.Amount = (double)orderData.Total;
-            _request.InvoiceNumber = orderID.ToString();
-
-            Response _response = PaymentProviderRepository.Instance.Get(PaymentProviderType.PayPalAdaptivePayment).PerformRequest(_request);
-            ResponseData = _response.AdditionalInfo;
-            if (_response.MerchantDefined1 != null)
-            {
-                ResponseData.Add("RedirectUrl", _response.MerchantDefined1);
-            }
-
-            if (_response != null && _response.ResponseType != TransactionResponseType.Approved)
-            {
-                //CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID, _response.AuthCode, 7);
-                return false;
-            }
-            else if (_response != null && _response.ResponseType == TransactionResponseType.Approved)
-            {
-                //CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID, _response.AuthCode, 4);
-                return true;
-            }
-            return true;
-        }
-
-        public static bool AuthorizeOrderWithPayPalExpressCheckout(ClientCartContext context, Hashtable RequestData, out Hashtable ResponseData)
-        {
-            string strMethod = "";
-            string strInvoiceNumber = "";
-            string strToken = "";
-            Request _request = new Request();
-            if (RequestData != null)
-            {
-                if (RequestData.ContainsKey("Method"))
-                {
-                    strMethod = RequestData["Method"].ToString();
-                }
-                if (RequestData.ContainsKey("InvoiceNumber"))
-                {
-                    strInvoiceNumber = RequestData["InvoiceNumber"].ToString();
-                }
-                if (RequestData.ContainsKey("Token"))
-                {
-                    strToken = RequestData["Token"].ToString().Trim();
-                }
-            }
-            switch (strMethod)
-            {
-                case "SetExpressCheckout":
-                    {
-                        _request.Amount = (double)(context.CartInfo.Total);
-                        _request.CurrencyCode = "USD";
-                        int ct = 0;
-                        string strLname = string.Empty;
-                        string strLamt = string.Empty;
-                        string strLqty = string.Empty;
-                        foreach (Sku skuItem in context.CartInfo.CartItems)
-                        {
-                            strLname = "L_PAYMENTREQUEST_0_NAME";
-                            strLamt = "L_PAYMENTREQUEST_0_AMT";
-                            strLqty = "L_PAYMENTREQUEST_0_QTY";
-                            strLname = "L_PAYMENTREQUEST_0_NAME" + ct;
-                            strLamt = "L_PAYMENTREQUEST_0_AMT" + ct;
-                            strLqty = "L_PAYMENTREQUEST_0_QTY" + ct;
-                            RequestData[strLname] = skuItem.Title;
-                            RequestData[strLamt] = skuItem.InitialPrice.ToString("N2");
-                            RequestData[strLqty] = skuItem.Quantity;
-                            ct++;
-                        }
-                        if (context.CartInfo.DiscountAmount > 0)
-                        {
-                            strLname = "L_PAYMENTREQUEST_0_NAME";
-                            strLamt = "L_PAYMENTREQUEST_0_AMT";
-                            strLqty = "L_PAYMENTREQUEST_0_QTY";
-                            strLname = "L_PAYMENTREQUEST_0_NAME" + ct;
-                            strLamt = "L_PAYMENTREQUEST_0_AMT" + ct;
-                            strLqty = "L_PAYMENTREQUEST_0_QTY" + ct;
-                            RequestData[strLname] = "Discount Code - " + context.CartInfo.DiscountCode;
-                            RequestData[strLamt] = "-" + context.CartInfo.DiscountAmount.ToString("N2");
-                            RequestData[strLqty] = "1";
-                        }
-                        RequestData["PAYMENTREQUEST_0_ITEMAMT"] = (context.CartInfo.SubTotal - context.CartInfo.DiscountAmount).ToString("N2");
-                        RequestData["PAYMENTREQUEST_0_SHIPPINGAMT"] = context.CartInfo.ShippingCost.ToString("N2");
-                        RequestData["PAYMENTREQUEST_0_TAXAMT"] = context.CartInfo.TaxCost.ToString("N2");
-                        break;
-                    }
-                case "GetExpressCheckoutDetails":
-                    {
-                        break;
-                    }
-                case "DoExpressCheckoutPayment":
-                    {
-                        _request.Amount = (double)(context.CartInfo.Total);
-                        _request.CurrencyCode = "USD";
-                        int ct = 0;
-                        string strLname = string.Empty;
-                        string strLamt = string.Empty;
-                        string strLqty = string.Empty;
-                        foreach (Sku skuItem in context.CartInfo.CartItems)
-                        {
-                            strLname = "L_PAYMENTREQUEST_0_NAME";
-                            strLamt = "L_PAYMENTREQUEST_0_AMT";
-                            strLqty = "L_PAYMENTREQUEST_0_QTY";
-                            strLname = "L_PAYMENTREQUEST_0_NAME" + ct;
-                            strLamt = "L_PAYMENTREQUEST_0_AMT" + ct;
-                            strLqty = "L_PAYMENTREQUEST_0_QTY" + ct;
-                            RequestData[strLname] = skuItem.Title;
-                            RequestData[strLamt] = skuItem.InitialPrice.ToString("N2");
-                            RequestData[strLqty] = skuItem.Quantity;
-                            ct++;
-                        }
-                        if (context.CartInfo.DiscountAmount > 0)
-                        {
-                            strLname = "L_PAYMENTREQUEST_0_NAME";
-                            strLamt = "L_PAYMENTREQUEST_0_AMT";
-                            strLqty = "L_PAYMENTREQUEST_0_QTY";
-                            strLname = "L_PAYMENTREQUEST_0_NAME" + ct;
-                            strLamt = "L_PAYMENTREQUEST_0_AMT" + ct;
-                            strLqty = "L_PAYMENTREQUEST_0_QTY" + ct;
-                            RequestData[strLname] = "Discount Code - " + context.CartInfo.DiscountCode;
-                            RequestData[strLamt] = "-" + context.CartInfo.DiscountAmount.ToString("N2");
-                            RequestData[strLqty] = "1";
-                        }
-                        RequestData["PAYMENTREQUEST_0_ITEMAMT"] = (context.CartInfo.SubTotal - context.CartInfo.DiscountAmount).ToString("N2");
-                        RequestData["PAYMENTREQUEST_0_SHIPPINGAMT"] = context.CartInfo.ShippingCost.ToString("N2");
-                        RequestData["PAYMENTREQUEST_0_TAXAMT"] = context.CartInfo.TaxCost.ToString("N2");
-                        _request.InvoiceNumber = strInvoiceNumber;
-                        //Save the AUTHCODE, TRANSACTION CODE.
-                        break;
-                    }
-
-            }
-
-
-
-
-
-            _request.AdditionalInfo = RequestData;
-
-
-            Response _response = PaymentProviderRepository.Instance.Get(PaymentProviderType.PayPalExpressCheckout).PerformRequest(_request);
-
-            //#region Log Request/Response
-            //try
-            //{
-            //    Dictionary<string, AttributeValue> orderAttributes = new Dictionary<string, AttributeValue>();
-            //    string logRequest = _response.GatewayRequestRaw; // TODO: we are not capturing this in base. Once updated there, we will begin saving request as well as response.
-            //    string logResponse = _response.GatewayResponseRaw;
-
-            //    // the attributes we save to depends on the type of call
-            //    if (RequestData.ContainsKey("ActionType") && RequestData["ActionType"].ToString() == "SetPaymentOptions")
-            //    {
-            //        orderAttributes.Add("PayPalSetPaymentRequest", new CSBusiness.Attributes.AttributeValue(logRequest));
-            //        orderAttributes.Add("PayPalSetPaymentResponse", new CSBusiness.Attributes.AttributeValue(logResponse));
-            //    }
-            //    else if (RequestData.ContainsKey("ActionType") && RequestData["ActionType"].ToString() == "GetShippingAddresses")
-            //    {
-            //        orderAttributes.Add("PayPalGetAddrRequest", new CSBusiness.Attributes.AttributeValue(logRequest));
-            //        orderAttributes.Add("PayPalGetAddrResponse", new CSBusiness.Attributes.AttributeValue(logResponse));
-            //    }
-            //    else
-            //    {
-            //        orderAttributes.Add("PayPalRequest", new CSBusiness.Attributes.AttributeValue(logRequest));
-            //        orderAttributes.Add("PayPalResponse", new CSBusiness.Attributes.AttributeValue(logResponse));
-            //    }
-
-            //    CSResolve.Resolve<IOrderService>().UpdateOrderAttributes(orderData.OrderId, orderAttributes, null);
-            //}
-            //catch (Exception ex)
-            //{
-            //    CSCore.CSLogger.Instance.LogException(ex.Message, ex.InnerException);
-            //}
-
-            //#endregion
-
-            ResponseData = _response.AdditionalInfo;
-
-            if (_response.MerchantDefined1 != null)
-            {
-                ResponseData.Add("RedirectUrl", _response.MerchantDefined1);
-            }
-
-            return true;
-        }
-
-        public static bool RefundOrderWithLitle(int orderID, string transactionid)
-        {
-            Request _request = new Request();
-
-            Order orderData = CSResolve.Resolve<IOrderService>().GetOrderDetails(orderID, true);
-
-
-            _request.TransactionID = transactionid;
-            _request.CustomerID = orderData.CustomerId.ToString();
-            _request.InvoiceNumber = orderData.OrderId.ToString();
-
-            
-            Response _response = PaymentProviderRepository.Instance.Get(PaymentProviderType.LitleCorpAccount).PerformVoidRequest(_request);
-
-            if (_response != null && _response.ResponseType != TransactionResponseType.Approved)
-            {
-                if (_response.ReasonText.Equals("362"))
-                {
-                    Response _response1 = PaymentProviderRepository.Instance.Get(PaymentProviderType.LitleCorpAccount).PerformVoidSettledRequest(_request);
-
-                    if (_response1 != null && _response1.ResponseType == TransactionResponseType.Approved)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                //CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID, _response.AuthCode, 7);
-
-                return false;
-            }
-            else if (_response != null && _response.ResponseType == TransactionResponseType.Approved)
-            {
-                //CSResolve.Resolve<IOrderService>().SaveOrder(orderData.OrderId, _response.TransactionID, _response.AuthCode, 4);
-                return true;
-            }
-
-            return true;
-
-
-        }
-
-        public static bool RefundOrderWithPayPalExpressCheckout(int orderID,Hashtable RequestData, out Hashtable ResponseData)
-        {
-            string strMethod = "";
-            string strInvoiceNumber = "";
-            string strToken = "";
-            Request _request = new Request();
-            if (RequestData != null)
-            {
-                if (RequestData.ContainsKey("Method"))
-                {
-                    strMethod = RequestData["Method"].ToString();
-                }
-                if (RequestData.ContainsKey("InvoiceNumber"))
-                {
-                    strInvoiceNumber = RequestData["InvoiceNumber"].ToString();
-                }
-                if (RequestData.ContainsKey("Token"))
-                {
-                    strToken = RequestData["Token"].ToString().Trim();
-                }
-            }
-            
-            
-            
-            _request.AdditionalInfo = RequestData;
-
-
-            Response _response = PaymentProviderRepository.Instance.Get(PaymentProviderType.PayPalExpressCheckout).PerformRequest(_request);
-
-            ResponseData = _response.AdditionalInfo;
-
-            if (_response.MerchantDefined1 != null)
-            {
-                ResponseData.Add("RedirectUrl", _response.MerchantDefined1);
-            }
-
-            return true;
-        }
     }
 }
- 

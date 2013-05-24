@@ -1,5 +1,6 @@
 <%@ Page Language="C#" AutoEventWireup="true" Inherits="CSWeb.Root.Store.index" EnableSessionState="True" %>
 <%@ Register TagPrefix="uc" TagName="ShippingForm" Src="~/UserControls/ShippingForm.ascx" %>
+<%@ Register Src="UserControls/TrackingPixels.ascx" TagName="TrackingPixels" TagPrefix="uc" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,6 +30,8 @@ $(document).ready(function() {
 <div id="Container">
 	<uc:ShippingForm RedirectUrl="AddProduct.aspx" runat="server" />
 </div>
+
 </form>
+<uc:TrackingPixels runat="server" />
 </body>
 </html>
