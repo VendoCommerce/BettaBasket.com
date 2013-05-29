@@ -20,6 +20,10 @@ namespace CSWeb.UserControls
             {
                 return Session["ClientOrderData"] as ClientCartContext;
             }
+            set
+            {
+                Session["ClientOrderData"] = value;
+            }
         }
 
         public ShoppingCartDisplayTotalMode TotalMode
@@ -212,6 +216,26 @@ namespace CSWeb.UserControls
             BindControls();
             if (UpdateCart != null)
                 UpdateCart(sender, e);
+        }
+
+        protected void chkAdditionItem_CheckChanged(object sender, EventArgs e)
+        {
+            ClientCartContext cartContext = CartContext;
+
+            if (chkAdditionItem.Checked)
+            {
+                cartContext.CartInfo.CartItems.Clear();
+                cartContext.CartInfo.AddOrUpdate(47, 1, true, false, false);
+            }
+            else
+            {
+                cartContext.CartInfo.CartItems.Clear();
+                cartContext.CartInfo.AddOrUpdate(43, 1, true, false, false);
+            }
+
+            cartContext.CartInfo.Compute();
+            BindControls();
+            CartContext = cartContext;
         }
     }
 

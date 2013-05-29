@@ -132,7 +132,7 @@ namespace CSWeb.C2.Store
             {
                 //SriComments: Admin may setup path with empty templates: kevin business case
                 if (CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.InstantOrderProcess)
-                    Response.Redirect("AuthorizeOrder.aspx");
+                    Response.Redirect("receipt.aspx");
                 else
                     Response.Redirect("ReviewOrder.aspx");
 
