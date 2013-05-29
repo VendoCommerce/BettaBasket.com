@@ -19,15 +19,15 @@
            
                 <asp:TextBox runat="server" ID="txtQuantity" Font-Size="8pt" Text='1' MaxLength="3"
                     Columns="2" OnTextChanged="OnTextChanged_Changed" Visible="false"></asp:TextBox>
-                <asp:Label runat="server" ID="lblQuantity" Visible="False" CssClass="cart_select">
+                <asp:Label runat="server" ID="lblQuantity" CssClass="cart_select">
                 </asp:Label>
             </div>
-            <div class="product_price" runat="server" visible="false">
-                <asp:Label runat="server" ID="lblSkuInitialPrice"></asp:Label>
-                <td runat="server" width="1%" id='holderRemove' visible="false">
-                    <asp:ImageButton ID="btnRemoveItem" runat="server" CommandName="delete" CausesValidation="false"
-                        Visible="" CssClass="ucRemoveButtonOverlay" ImageUrl="../Content/images/delete.gif" />
-                </td>
+            <div id="Div1" class="product_price" runat="server">
+                <asp:Label runat="server" ID="lblSkuInitialPrice"></asp:Label>                
+            </div>
+            <div runat="server" width="1%" id='holderRemove' visible="false">
+                <asp:ImageButton ID="btnRemoveItem" runat="server" CommandName="delete" CausesValidation="false"
+                    Visible="" CssClass="ucRemoveButtonOverlay" ImageUrl="../Content/images/delete.gif" />
             </div>
         </div>
     </ItemTemplate>
@@ -40,16 +40,16 @@
             <div class="cart_totals_left">
                 Subtotal:<br />
                 S&amp;H:<br />
-                Tax:<br />
-                
-                Total:</div>
+                Tax:<br />                
+                Total:
+            </div>
             <div class="cart_totals_right">
                 <asp:Literal runat="server" ID='lblSubtotal'></asp:Literal><br />
-                <asp:Literal runat="server" ID="lblShipping"></asp:Literal><br />
+                <asp:Literal runat="server" ID="lblShipping"></asp:Literal><br />                                
                 <asp:Literal runat="server" ID="lblTax"></asp:Literal><br />
-                
                 <asp:Literal runat="server" ID="lblOrderTotal"></asp:Literal>
-                <asp:Literal runat="server" ID="lblRushShipping" Visible="false"></asp:Literal>
+
+                <asp:Literal runat="server" ID="lblRushShipping" Visible="false"></asp:Literal>                
                 <table>
                     <tr id='holderRushShippingTotal' runat="server" Visible="False">
                         <td class='cartSubtotalTitle' align="right" colspan="3">
@@ -65,6 +65,10 @@
                         </td>
                     </tr>
                 </table>
+            </div>
+
+            <div>
+                <asp:CheckBox ID="chkAdditionItem" runat="server" AutoPostBack="true" OnCheckedChanged="chkAdditionItem_CheckChanged" /> Click here to get an additional Betta Basket
             </div>
         </div>
     </asp:PlaceHolder>

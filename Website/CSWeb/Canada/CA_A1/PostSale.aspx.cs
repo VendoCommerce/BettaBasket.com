@@ -12,6 +12,8 @@ using CSCore.Utils;
 using CSBusiness.OrderManagement;
 using CSBusiness.Resolver;
 using CSBusiness.ShoppingManagement;
+using System.Text;
+using System.Xml.XPath;
 
 namespace CSWeb.Canada.CA_A1.C2.Store
 {
@@ -27,12 +29,6 @@ namespace CSWeb.Canada.CA_A1.C2.Store
         {
             get { return ViewState["Skus"] as List<string>; }
             set { ViewState["Skus"] = value; }
-        }
-
-        private SkuLookupBag LookupBag
-        {
-            get { return ViewState["LookupBag"] as SkuLookupBag; }
-            set { ViewState["LookupBag"] = value; }
         }
 
         private int CurrentTemplateIndex
@@ -132,7 +128,7 @@ namespace CSWeb.Canada.CA_A1.C2.Store
             {
                 //SriComments: Admin may setup path with empty templates: kevin business case
                 if (CSFactory.OrderProcessCheck() == (int)OrderProcessTypeEnum.InstantOrderProcess)
-                    Response.Redirect("AuthorizeOrder.aspx");
+                    Response.Redirect("receipt.aspx");
                 else
                     Response.Redirect("ReviewOrder.aspx");
 
@@ -149,56 +145,97 @@ namespace CSWeb.Canada.CA_A1.C2.Store
                 PathManager pathManager = new PathManager();
                 Template currentTemplate = pathManager.GetTemplate(currentTemplateId);
 
+                if (currentTemplate.UriLabel != null)
+                {
+                    Session["PostSaleLabelName"] = currentTemplate.UriLabel;
+                }
+                else
+                {
+                    Session["PostSaleLabelName"] = "";
+                }
                 if (currentTemplate.CanUseTemplate(CartContext))
                 {
+                    //decimal orderTotal = 0;
+                    //decimal neworderTotal = 0;
+                    //decimal shippingandhandling = 0;
+                    //Order orderItem = new OrderManager().GetBatchProcessOrders(CartContext.OrderId);
+                    //shippingandhandling = orderItem.ShippingCost;
+                    //foreach (Sku s in orderItem.SkuItems)
+                    //{
+                    //    orderTotal += s.InitialPrice;
+                    //    s.LoadAttributeValues();
+                    //    try
+                    //    {
+                    //        if (s.AttributeValues["relatedonepaysku"] != null && !s.AttributeValues["relatedonepaysku"].Value.Equals(""))
+                    //        {
+                    //            int skuId = Convert.ToInt32(s.AttributeValues["relatedonepaysku"].Value);
+                    //            Sku st = new SkuManager().GetSkuByID(skuId);
+                    //            //st.SkuId = skuId;
+
+                    //            st.LoadAttributeValues();
+                    //            neworderTotal += st.InitialPrice;
+                    //        }
+                    //    }
+                    //    catch
+                    //    {
+
+
+                    //    }
+                    //}
+                    decimal orderTotal = 0;
+                    decimal neworderTotal = 0;
+                    decimal shippingandhandling = 0;
                     string templateBody = currentTemplate.Body;
+
+                    if (templateBody.Contains("<input name=\"onepay\" value=\"onepay\" id=\"onepay\" type=\"hidden\" />"))
+                    {
+
+                        Order orderItem = new OrderManager().GetBatchProcessOrders(CartContext.OrderId);
+                        shippingandhandling = orderItem.ShippingCost;
+                        foreach (Sku s in orderItem.SkuItems)
+                        {
+                            orderTotal += s.InitialPrice;
+                            s.LoadAttributeValues();
+                            try
+                            {
+                                if (s.AttributeValues["relatedonepaysku"] != null && !s.AttributeValues["relatedonepaysku"].Value.Equals(""))
+                                {
+                                    int skuId = Convert.ToInt32(s.AttributeValues["relatedonepaysku"].Value);
+                                    Sku st = new SkuManager().GetSkuByID(skuId);
+                                    //st.SkuId = skuId;
+
+                                    st.LoadAttributeValues();
+                                    neworderTotal += st.InitialPrice;
+                                }
+                            }
+                            catch
+                            {
+
+
+                            }
+                        }
+                    }
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append(templateBody);
+
+                    //templateBody.Replace('{upsellTotal}', Math.Round(neworderTotal, 2).ToString());
+                    sb.Replace("{upsellTotal}", Math.Round(neworderTotal, 2).ToString());
+                    sb.Replace("{upsellshipping}", Math.Round(shippingandhandling, 2).ToString());
+                    sb.Replace("{upsellsave}", Math.Round(shippingandhandling + 14.95m, 2).ToString());
+                    templateBody = sb.ToString();
                     templateBody = BindLinks(templateBody);
                     templateBody = BindValidators(templateBody);
                     BindContainers(templateBody);
 
-                    mainContainer.InnerHtml = templateBody;
+                    string script = string.Format("<script type=\"text/javascript\">\r\n{0}\r\n</script>", currentTemplate.Script);
 
                     //Tags contain some template related configuration information
                     var templateTagsXml = XElement.Parse("<root>" + currentTemplate.Tag + "</root>");
 
-                    //there can be 1-many sku's in this template
-                    var skuTags = templateTagsXml.Descendants("sku").Where(a => a.Attribute("id") != null);
-                    Skus = new List<string>();
-                    foreach (var s in skuTags)
-                    {
-                        Skus.Add(s.Attribute("id").Value);
-                    }
+                    templateBody = InsertData(templateTagsXml, templateBody);
 
-                    //We'll parse here the lookup for dropdowns if there is any
-                    var skuLookup = templateTagsXml.Descendants("skulookup").DefaultIfEmpty();
-                    LookupBag = new SkuLookupBag();
-                    if (skuLookup != null)
-                    {
-                        var controlSet = skuLookup.Descendants("controls");
-                        foreach (var set in controlSet)
-                        {
-                            SkuLookupSet lookupSet = new SkuLookupSet();
-                            //Order of controls is important as later that's how the actual sku us built
-                            var lookupControls = set.Descendants("control");
-                            foreach (var c in lookupControls)
-                            {
-                                if (c.Attribute("type") != null && c.Attribute("type").Value == "quantity")
-                                {
-                                    lookupSet.Quantity = c.Attribute("name").Value;
-                                }
-                                else
-                                    lookupSet.Controls.Add(c.Attribute("name").Value);
-                            }
-                            LookupBag.Set.Add(lookupSet);
-                        }
-
-                        var lookupItem = skuLookup.Descendants("item");
-                        foreach (var l in lookupItem)
-                        {
-                            LookupBag.Lookup.Add(l.Attribute("value").Value.ToLowerInvariant(), l.Attribute("sku").Value.ToLowerInvariant());
-                        }
-                    }
-
+                    // write template html to page
+                    mainContainer.InnerHtml = string.Format("{0}\r\n{1}", script, templateBody);
                 }
                 else
                 {
@@ -263,6 +300,9 @@ namespace CSWeb.Canada.CA_A1.C2.Store
                         if (attributeName == "yes")
                             clientScript = "if(validateForm()) " + clientScript;
 
+                        if (linkXml.Attribute("onclick") != null)
+                            clientScript = string.Concat(linkXml.Attribute("onclick").Value, clientScript);
+
                         linkXml.SetAttributeValue("onclick", clientScript + ";return false;");
                         templateBody = templateBody.Replace(links[i].Value, linkXml.ToString());
                     }
@@ -295,47 +335,195 @@ namespace CSWeb.Canada.CA_A1.C2.Store
             }
         }
 
-        private Dictionary<int, int> GetSelectedItems()
+        private string InsertData(XElement templateTagsXml, string templateBody)
         {
-            //1. This dictionary will be added to shopping cart
-            Dictionary<int, int> dictOut = new Dictionary<int, int>();
+            #region Sample XML
+            /*
+<TemplateDetails>
+  <GetData>
+    <Item what="SkuPrice" targetPlaceHolder="{SKU36_PRICE}">
+      <Parameters skuId="36" />
+    </Item>
+    <Item what="SkuPrice" targetPlaceHolder="{SKU39_PRICE}">
+      <Parameters skuId="39" />
+    </Item>
+  </GetData>
+</TemplateDetails>
+             * */
+            #endregion
 
-            //2. Add all skus from the template
-            Skus.ForEach(s => dictOut[Convert.ToInt32(s)] = 1);
-
-            //3. Check every lookup control
-            int totalSets = LookupBag.Set.Count;
-            for (int s = 0; s < totalSets; s++)
+            // check data pull nodes
+            foreach (var s in templateTagsXml.XPathSelectElements("//getdata/item"))
             {
-                string formSku = string.Empty;
-                int formQuantity = 1;
-                SkuLookupSet lookupSet = LookupBag.Set[s];
-                for (int i = 0; i < lookupSet.Controls.Count; i++)
+                switch (s.Attribute("what").Value.ToLower())
                 {
-                    if (!String.IsNullOrEmpty(Request.Form[lookupSet.Controls[i]]))
-                    {
-                        formSku += Request.Form[lookupSet.Controls[i]];
-                    }
-                }
+                    case "skuprice":
+                        int skuId = Convert.ToInt32(s.XPathSelectElement("parameters").Attribute("skuid").Value);
 
-                if (!String.IsNullOrEmpty(Request.Form[lookupSet.Quantity]))
-                {
-                    int.TryParse(Request.Form[lookupSet.Quantity], out formQuantity);
-                }
+                        Sku sku = CSResolve.Resolve<ISkuService>().GetSkuByID(skuId);
 
-                if (lookupSet.Controls.Count == 1) //if there is only one control, no lookup is required.
-                {
-                    //Edge Case Check: User should not add same item.
-                    if (!dictOut.ContainsKey(Convert.ToInt32(formSku)))
-                        dictOut.Add(Convert.ToInt32(formSku), formQuantity);
-                }
-                else if (LookupBag.Lookup.ContainsKey(formSku.ToLowerInvariant()))
-                {
-                    dictOut.Add(Convert.ToInt32(LookupBag.Lookup[formSku.ToLowerInvariant()]), formQuantity);
+                        templateBody = templateBody.Replace(s.Attribute("targetplaceholder").Value, sku.InitialPrice.ToString());
+
+                        break;
                 }
             }
 
-            return dictOut;
+            return templateBody;
+        }
+
+        private bool MatchesCondition(XElement conditions, string condKey)
+        {
+            #region Sample XML
+            /*
+    <Conditions>
+      <Condition key="cond1">
+        <FieldMatch name="userSelection" isRegex="false">one</FieldMatch>
+      </Condition>
+      <Condition key="cond2">
+        <FieldMatch name="userSelection" isRegex="false">two</FieldMatch>
+      </Condition>
+    </Conditions>             
+             */
+            #endregion
+
+            var fieldMatches = conditions.XPathSelectElements(string.Format("//condition[@key='{0}']/fieldmatch", condKey));
+            if (fieldMatches == null)
+                return false;
+
+            string fieldName = null;
+            string value = null;
+            bool isMatch = true;
+            foreach (var f in fieldMatches)
+            {
+                fieldName = f.Attribute("name").Value;
+                value = f.Value;
+
+                if (bool.Parse((f.Attribute("isregex") ?? new XAttribute("false", "false")).Value))
+                {
+                    isMatch = isMatch && Regex.IsMatch(Request.Form[fieldName], value);
+                }
+                else
+                {
+                    isMatch = isMatch && Request.Form[fieldName] == value;
+                }
+
+                if (!isMatch)
+                    break;
+            }
+
+            return isMatch;
+        }
+
+        private void GetTemplateSelections(ref Dictionary<int, int> skusAndQuantities)
+        {
+            #region Sample XML
+            /*
+<TemplateDetails>
+  <SelectionParameters>    
+    <FixedSkuEntryFields useCondition="cond1" type="onepay">
+      <Sku Id="36">
+        <Field what="quantity" name="SKU36QTY" />
+      </Sku>
+      <Sku Id="39">
+        <Field what="quantity" name="SKU39QTY" defaultValue />
+      </Sku>
+    </FixedSkuEntryFields>
+    <FixedSkuEntryFields useCondition="cond2">
+      <Sku Id="40">
+        <Field what="quantity" name="SKU40QTY" />
+      </Sku>      
+    </FixedSkuEntryFields>
+    <Conditions>
+      <Condition key="cond1">
+        <FieldMatch name="userSelection" isRegex="false">one</FieldMatch>
+      </Condition>
+      <Condition key="cond2">
+        <FieldMatch name="userSelection" isRegex="false">two</FieldMatch>
+      </Condition>
+    </Conditions>
+  </SelectionParameters>  
+</TemplateDetails>
+             * */
+            #endregion
+
+            XElement templateTags = XElement.Parse(((Template)(new PathManager().GetTemplate(AllTemplates[CurrentTemplateIndex]))).Tag);
+
+            // search "sku and select fields" information
+            foreach (var r in templateTags.XPathSelectElements("//selectionparameters/fixedskuentryfields"))
+            {
+                if (r.Attribute("type") != null && r.Attribute("type").Value.Equals("onepay"))
+                {
+                    Order orderItem = new OrderManager().GetBatchProcessOrders(CartContext.OrderId);
+                    foreach (Sku s in orderItem.SkuItems)
+                    {
+                        s.LoadAttributeValues();
+                        try
+                        {
+                            if (s.AttributeValues["relatedonepaysku"] != null && !s.AttributeValues["relatedonepaysku"].Value.Equals(""))
+                            {
+                                int skuId = Convert.ToInt32(s.AttributeValues["relatedonepaysku"].Value);
+                                skusAndQuantities.Add(skuId, 1);
+                            }
+                        }
+                        catch
+                        {
+
+
+                        }
+
+                    }
+
+                    foreach (Sku s in CartContext.CartInfo.CartItems)
+                    {
+                        s.LoadAttributeValues();
+                        try
+                        {
+                            if (s.AttributeValues["relatedonepaysku"] != null && !s.AttributeValues["relatedonepaysku"].Value.Equals(""))
+                            {
+                                int skuId = Convert.ToInt32(s.AttributeValues["relatedonepaysku"].Value);
+                                skusAndQuantities.Add(skuId, 1);
+                            }
+                        }
+                        catch
+                        {
+
+
+                        }
+
+                    }
+
+
+                }
+                else
+                {
+                    if (r.Attribute("usecondition") == null
+                    || MatchesCondition(templateTags.XPathSelectElement("//selectionparameters/conditions"), r.Attribute("usecondition").Value))
+                    {
+                        foreach (var s in r.XPathSelectElements("sku"))
+                        {
+                            int skuId = Convert.ToInt32(s.Attribute("id").Value);
+                            string fieldName = null;
+
+                            // read quantity
+                            int quantity = 0;
+                            XElement quantField = s.XPathSelectElement("field[@what = 'quantity']");
+                            if (quantField != null)
+                            {
+                                if (quantField.Attribute("name") != null)
+                                {
+                                    fieldName = quantField.Attribute("name").Value;
+
+                                    if (int.TryParse(Request.Form[fieldName], out quantity))
+                                        skusAndQuantities.Add(skuId, quantity);
+                                }
+                                else
+                                    skusAndQuantities.Add(skuId, Convert.ToInt32((quantField.Attribute("defaultvalue") ?? new XAttribute("0", "0")).Value));
+                            }
+                        }
+                    }
+                }
+
+            }
         }
 
         protected void btnYes_OnClick(object sender, EventArgs e)
@@ -343,15 +531,15 @@ namespace CSWeb.Canada.CA_A1.C2.Store
             //In case if use clicks back button and clicks yes again we need to redirect to a special page with some session expired text
             if (CurrentTemplateIndex < AllTemplates.Count)
             {
-                Dictionary<int, int> selectedProducts = GetSelectedItems();
+                Dictionary<int, int> skuAndQuantity = new Dictionary<int, int>();
+
+                GetTemplateSelections(ref skuAndQuantity);
+
                 PathManager pathManager = new PathManager();
                 Template currentTemplate = pathManager.GetTemplate(AllTemplates[CurrentTemplateIndex]);
 
-                currentTemplate.Process(CartContext.OrderId, CartContext.CartInfo, selectedProducts, (OrderProcessTypeEnum)CSFactory.OrderProcessCheck());
-                //foreach (var p in selectedProducts)
-                //{
-                //    Response.Write(string.Format("{0} x {1} will be added to shopping cart<br />", p.Key, p.Value));
-                //}
+                currentTemplate.Process(CartContext.OrderId, CartContext.CartInfo, skuAndQuantity,
+                    (OrderProcessTypeEnum)CSFactory.OrderProcessCheck());
 
                 GoToNextTemplate();
             }
@@ -364,43 +552,6 @@ namespace CSWeb.Canada.CA_A1.C2.Store
         protected void btnNo_OnClick(object sender, EventArgs e)
         {
             GoToNextTemplate();
-        }
-
-
-        //protected override void OnPreRender(EventArgs e)
-        //{
-        //    base.OnPreRender(e);
-
-        //    ScriptManager.RegisterClientScriptInclude(this, this.GetType(),
-        //        "jquery.validationEngine.js_local", Page.ResolveClientUrl("~/Scripts/validation/languages/jquery.validationEngine-" +
-        //            System.Threading.Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName + ".js"));
-        //    ScriptManager.RegisterClientScriptInclude(this, this.GetType(), "jquery.validationEngine.js", Page.ResolveClientUrl("~/Scripts/validation/jquery.validationEngine.js"));
-        //}
-
-        [Serializable]
-        private class SkuLookupSet
-        {
-            public List<string> Controls;
-            public string Quantity;
-
-            public SkuLookupSet()
-            {
-                Controls = new List<string>();
-                Quantity = string.Empty;
-            }
-        }
-
-        [Serializable]
-        private class SkuLookupBag
-        {
-            public SkuLookupBag()
-            {
-                Set = new List<SkuLookupSet>();
-                Lookup = new Dictionary<string, string>();
-            }
-
-            public List<SkuLookupSet> Set;
-            public Dictionary<string, string> Lookup;
         }
     }
 }

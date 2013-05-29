@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CSWeb.Canada.CA_A1.UserControls{
+namespace CSWeb.Canada.CA_A1.UserControls {
     
     
     public partial class ShoppingCartControl {
@@ -119,5 +119,14 @@ namespace CSWeb.Canada.CA_A1.UserControls{
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkIncludeRushShipping;
+        
+        /// <summary>
+        /// chkAdditionItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkAdditionItem;
     }
 }
