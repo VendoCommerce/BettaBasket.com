@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="Order">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CallCenter" type="xs:string" minOccurs="0" />
+        <xs:element name="OrderHeader" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GROUP_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="CASH_BAT" type="xs:string" minOccurs="0" />
+              <xs:element name="SEQUENCE_NUMBER" type="xs:string" minOccurs="0" />
+              <xs:element name="USER" type="xs:string" minOccurs="0" />
+              <xs:element name="DATE_ORD" type="xs:string" minOccurs="0" />
+              <xs:element name="CL_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="CSOURCE" type="xs:string" minOccurs="0" />
+              <xs:element name="CMEDIA" type="xs:string" minOccurs="0" />
+              <xs:element name="CREDCD" type="xs:string" minOccurs="0" />
+              <xs:element name="EXPDT" type="xs:string" minOccurs="0" />
+              <xs:element name="PROJECT" type="xs:string" minOccurs="0" />
+              <xs:element name="CARRIER" type="xs:string" minOccurs="0" />
+              <xs:element name="SVC_TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="AMTPAY" type="xs:string" minOccurs="0" />
+              <xs:element name="CHECK_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="BANK-NO" type="xs:string" minOccurs="0" />
+              <xs:element name="MICRCODE" type="xs:string" minOccurs="0" />
+              <xs:element name="PAY_TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="NUM_PYMNTS" type="xs:string" minOccurs="0" />
+              <xs:element name="EMAIL" type="xs:string" minOccurs="0" />
+              <xs:element name="COMPANY" type="xs:string" minOccurs="0" />
+              <xs:element name="F_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="L_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ADDR_1" type="xs:string" minOccurs="0" />
+              <xs:element name="ADDR_2" type="xs:string" minOccurs="0" />
+              <xs:element name="CITY" type="xs:string" minOccurs="0" />
+              <xs:element name="ST" type="xs:string" minOccurs="0" />
+              <xs:element name="ZIP" type="xs:string" minOccurs="0" />
+              <xs:element name="PHONE" type="xs:string" minOccurs="0" />
+              <xs:element name="PHONE_EXT" type="xs:string" minOccurs="0" />
+              <xs:element name="COUNTRY_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="OPT_IN" type="xs:string" minOccurs="0" />
+              <xs:element name="OPT_OUT" type="xs:string" minOccurs="0" />
+              <xs:element name="ADJ_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="AMT_DISC" type="xs:string" minOccurs="0" />
+              <xs:element name="MISC" type="xs:string" minOccurs="0" />
+              <xs:element name="SALE_AMOUNT" type="xs:string" minOccurs="0" />
+              <xs:element name="SHIPPING_HANDLING_AMOUNT" type="xs:string" minOccurs="0" />
+              <xs:element name="TAX_AMOUNT" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTAL_CHARGE_AMOUNT" type="xs:string" minOccurs="0" />
+              <xs:element name="CREDIT_CARD_DISCOUNT_AMOUNT" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEM_DISCOUNT_PERCENT" type="xs:string" minOccurs="0" />
+              <xs:element name="CREDIT_CARD_DISCOUNT_PERCENT" type="xs:string" minOccurs="0" />
+              <xs:element name="PURCHASE_ORDER" type="xs:string" minOccurs="0" />
+              <xs:element name="SERIES_INTERVAL" type="xs:string" minOccurs="0" />
+              <xs:element name="SRC_CD" type="xs:string" minOccurs="0" />
+              <xs:element name="CVV2" type="xs:string" minOccurs="0" />
+              <xs:element name="BILL_TO_COMPANY" type="xs:string" minOccurs="0" />
+              <xs:element name="BILL_TO_L_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="BILL_TO_F_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="BILL_TO_ADDR_1" type="xs:string" minOccurs="0" />
+              <xs:element name="BILL_TO_ADDR_2" type="xs:string" minOccurs="0" />
+              <xs:element name="BILL_TO_CITY" type="xs:string" minOccurs="0" />
+              <xs:element name="BILL_TO_ST" type="xs:string" minOccurs="0" />
+              <xs:element name="BILL_TO_ZIP" type="xs:string" minOccurs="0" />
+              <xs:element name="BILL_TO_COUNTRY_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="UNIQUE-ID" type="xs:string" minOccurs="0" />
+              <xs:element name="HAS_FINANCIAL" type="xs:string" minOccurs="0" />
+              <xs:element name="HAS_GIFT_REC" type="xs:string" minOccurs="0" />
+              <xs:element name="HAS_CALLCENTER_REC" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OrderDetail" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LineItem" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="QUANTITY_ORDERED" type="xs:string" minOccurs="0" />
+                    <xs:element name="OFFER_CODE" type="xs:string" minOccurs="0" />
+                    <xs:element name="OFFER_DESCRIPTION" type="xs:string" minOccurs="0" />
+                    <xs:element name="SELL_SIGN" type="xs:string" minOccurs="0" />
+                    <xs:element name="UNIT_PRICE" type="xs:string" minOccurs="0" />
+                    <xs:element name="HANDL_SIGN" type="xs:string" minOccurs="0" />
+                    <xs:element name="UNIT_SHIPPING_HANDLING_AMOUNT" type="xs:string" minOccurs="0" />
+                    <xs:element name="CLIENT_SKU" type="xs:string" minOccurs="0" />
+                    <xs:element name="TAXABLE_FLAG" type="xs:string" minOccurs="0" />
+                    <xs:element name="CONTINUITY_FLAG" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GiftMessage" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MESSAGE1" type="xs:string" minOccurs="0" />
+              <xs:element name="MESSAGE2" type="xs:string" minOccurs="0" />
+              <xs:element name="MESSAGE3" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Financial" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AUTHORIZATION_SOURCE_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="CVV2_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="ALTERNATE_ACCOUNT_NUMBER" type="xs:string" minOccurs="0" />
+              <xs:element name="TRANSACTION_ID" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="Order" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

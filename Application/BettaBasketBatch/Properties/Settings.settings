@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AhhBraBatch.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AhhBraBatch_com_shoptvcanada_ws_OMSOrderTaker" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx</Value>
+    </Setting>
+    <Setting Name="AhhBraBatch_com_qcmoultonordervision_ORDAPI" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://qcmoultonordervision.com/Ws/ORDAPI.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

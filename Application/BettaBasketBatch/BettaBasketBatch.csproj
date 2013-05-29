@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B9890542-4C72-4122-BCA2-EF28BB37531E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BettaBasketBatch</RootNamespace>
+    <AssemblyName>BettaBasketBatch</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>0F1ED81305CF4B3D08C273AFF36ADABC5490E54C</ManifestCertificateThumbprint>
+    <ManifestKeyFile>RubberMaidXMLBatch_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <SccProjectName>%24/CSCommerce/Dev/BettaBasket.com/Application/BettaBasketBatch</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>http://cs-srcctrl1:8080/tfs/csapps</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\PublishTest\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSBusiness">
+      <HintPath>..\..\Website\CSDLL\CSBusiness.dll</HintPath>
+    </Reference>
+    <Reference Include="CSCore">
+      <HintPath>..\..\Website\CSDLL\CSCore.dll</HintPath>
+    </Reference>
+    <Reference Include="CSData">
+      <HintPath>..\..\Website\CSDLL\CSData.dll</HintPath>
+    </Reference>
+    <Reference Include="CSPaymentProvider">
+      <HintPath>..\..\Website\CSDLL\CSPaymentProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application_Code\DataAccess\SQLServerDALTzone.cs" />
+    <Compile Include="Application_Code\DataAccess\SQLServerNoNoSkin.cs" />
+    <Compile Include="Application_Code\DataAccess\SQLServerDALAcneComplexVersion3.cs" />
+    <Compile Include="Application_Code\DataAccess\SQLServerDALAcneComplexVersion2.cs" />
+    <Compile Include="Application_Code\DataAccess\SQLServerDALVersionA4.cs" />
+    <Compile Include="Application_Code\DataAccess\SQLServerDALJoanSkin.cs" />
+    <Compile Include="Application_Code\DataAccess\SQLServerDALGlow.cs" />
+    <Compile Include="Application_Code\DataAccess\SQLServerDALDirectMail.cs" />
+    <Compile Include="Application_Code\DataAccess\SQLServerDALV2.cs" />
+    <Compile Include="Application_Code\DataAccess\SQLServerDALV3.cs" />
+    <Compile Include="Application_Code\DataAccess\DAL.cs" />
+    <Compile Include="Application_Code\DataAccess\DAO.cs" />
+    <Compile Include="Application_Code\DataAccess\SQLServerDAL.cs" />
+    <Compile Include="Application_Code\DataAccess\SQLServerDAO.cs" />
+    <Compile Include="Application_Code\UI\BasePage.cs" />
+    <Compile Include="Application_Code\Utility\Helper.cs" />
+    <Compile Include="Application_Code\Utility\LogData.cs" />
+    <Compile Include="Application_Code\BusinessObjects\Order.cs" />
+    <Compile Include="Application_Code\BusinessObjects\moulton.cs">
+      <DependentUpon>moulton.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Application_Code\BusinessObjects\moulton.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>moulton.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Batch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web References\com.qcmoultonordervision\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.shoptvcanada.ws\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://qcmoultonordervision.com/Ws/ORDAPI.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.qcmoultonordervision\</RelPath>
+      <UpdateFromURL>https://qcmoultonordervision.com/Ws/ORDAPI.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>AhhBraBatch_com_qcmoultonordervision_ORDAPI</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.shoptvcanada.ws\</RelPath>
+      <UpdateFromURL>https://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>AhhBraBatch_com_shoptvcanada_ws_OMSOrderTaker</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application_Code\BusinessObjects\moulton.xsc">
+      <DependentUpon>moulton.xsd</DependentUpon>
+    </None>
+    <None Include="Application_Code\BusinessObjects\moulton.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>moulton.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Application_Code\BusinessObjects\moulton.xss">
+      <DependentUpon>moulton.xsd</DependentUpon>
+    </None>
+    <None Include="Web References\com.qcmoultonordervision\ORDAPI.wsdl" />
+    <None Include="Web References\com.shoptvcanada.ws\omsordertaker.disco" />
+    <None Include="Web References\com.shoptvcanada.ws\omsordertaker.wsdl" />
+    <None Include="Web References\com.shoptvcanada.ws\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\com.qcmoultonordervision\ORDAPI.disco" />
+    <None Include="Web References\com.qcmoultonordervision\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

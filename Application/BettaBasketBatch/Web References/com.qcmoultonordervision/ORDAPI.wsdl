@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://www.moultonordervision.com/Ws/ORDAPI.asmx" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://www.moultonordervision.com/Ws/ORDAPI.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">OrderNew Web Service</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://www.moultonordervision.com/Ws/ORDAPI.asmx">
+      <s:element name="OrderNewAPI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GroupCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Project" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLFormatCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrdXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderNewAPIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNewAPIResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderNewAPITrackable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GroupCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UniqueId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Project" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLFormatCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrdXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderNewAPITrackableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNewAPITrackableResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderAPI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderAPIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderAPIResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="OrderNewAPISoapIn">
+    <wsdl:part name="parameters" element="tns:OrderNewAPI" />
+  </wsdl:message>
+  <wsdl:message name="OrderNewAPISoapOut">
+    <wsdl:part name="parameters" element="tns:OrderNewAPIResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderNewAPITrackableSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderNewAPITrackable" />
+  </wsdl:message>
+  <wsdl:message name="OrderNewAPITrackableSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderNewAPITrackableResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderAPISoapIn">
+    <wsdl:part name="parameters" element="tns:OrderAPI" />
+  </wsdl:message>
+  <wsdl:message name="OrderAPISoapOut">
+    <wsdl:part name="parameters" element="tns:OrderAPIResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderNewAPIHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="GroupCode" type="s:string" />
+    <wsdl:part name="ClNo" type="s:string" />
+    <wsdl:part name="Project" type="s:string" />
+    <wsdl:part name="XMLFormatCode" type="s:string" />
+    <wsdl:part name="OrdXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OrderNewAPIHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="OrderNewAPITrackableHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="GroupCode" type="s:string" />
+    <wsdl:part name="UniqueId" type="s:string" />
+    <wsdl:part name="ClNo" type="s:string" />
+    <wsdl:part name="Project" type="s:string" />
+    <wsdl:part name="XMLFormatCode" type="s:string" />
+    <wsdl:part name="OrdXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OrderNewAPITrackableHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="OrderAPIHttpGetIn">
+    <wsdl:part name="RequestXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OrderAPIHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="OrderNewAPIHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="GroupCode" type="s:string" />
+    <wsdl:part name="ClNo" type="s:string" />
+    <wsdl:part name="Project" type="s:string" />
+    <wsdl:part name="XMLFormatCode" type="s:string" />
+    <wsdl:part name="OrdXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OrderNewAPIHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="OrderNewAPITrackableHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="GroupCode" type="s:string" />
+    <wsdl:part name="UniqueId" type="s:string" />
+    <wsdl:part name="ClNo" type="s:string" />
+    <wsdl:part name="Project" type="s:string" />
+    <wsdl:part name="XMLFormatCode" type="s:string" />
+    <wsdl:part name="OrdXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OrderNewAPITrackableHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="OrderAPIHttpPostIn">
+    <wsdl:part name="RequestXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OrderAPIHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="ORDAPISoap">
+    <wsdl:operation name="OrderNewAPI">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Without UniqueId</wsdl:documentation>
+      <wsdl:input message="tns:OrderNewAPISoapIn" />
+      <wsdl:output message="tns:OrderNewAPISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderNewAPITrackable">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">With UniqueId</wsdl:documentation>
+      <wsdl:input message="tns:OrderNewAPITrackableSoapIn" />
+      <wsdl:output message="tns:OrderNewAPITrackableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderAPI">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Multiple-Order</wsdl:documentation>
+      <wsdl:input message="tns:OrderAPISoapIn" />
+      <wsdl:output message="tns:OrderAPISoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ORDAPIHttpGet">
+    <wsdl:operation name="OrderNewAPI">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Without UniqueId</wsdl:documentation>
+      <wsdl:input message="tns:OrderNewAPIHttpGetIn" />
+      <wsdl:output message="tns:OrderNewAPIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderNewAPITrackable">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">With UniqueId</wsdl:documentation>
+      <wsdl:input message="tns:OrderNewAPITrackableHttpGetIn" />
+      <wsdl:output message="tns:OrderNewAPITrackableHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderAPI">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Multiple-Order</wsdl:documentation>
+      <wsdl:input message="tns:OrderAPIHttpGetIn" />
+      <wsdl:output message="tns:OrderAPIHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ORDAPIHttpPost">
+    <wsdl:operation name="OrderNewAPI">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Without UniqueId</wsdl:documentation>
+      <wsdl:input message="tns:OrderNewAPIHttpPostIn" />
+      <wsdl:output message="tns:OrderNewAPIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderNewAPITrackable">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">With UniqueId</wsdl:documentation>
+      <wsdl:input message="tns:OrderNewAPITrackableHttpPostIn" />
+      <wsdl:output message="tns:OrderNewAPITrackableHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderAPI">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Multiple-Order</wsdl:documentation>
+      <wsdl:input message="tns:OrderAPIHttpPostIn" />
+      <wsdl:output message="tns:OrderAPIHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ORDAPISoap" type="tns:ORDAPISoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OrderNewAPI">
+      <soap:operation soapAction="https://www.moultonordervision.com/Ws/ORDAPI.asmx/OrderNewAPI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderNewAPITrackable">
+      <soap:operation soapAction="https://www.moultonordervision.com/Ws/ORDAPI.asmx/OrderNewAPITrackable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderAPI">
+      <soap:operation soapAction="https://www.moultonordervision.com/Ws/ORDAPI.asmx/OrderAPI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ORDAPISoap12" type="tns:ORDAPISoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OrderNewAPI">
+      <soap12:operation soapAction="https://www.moultonordervision.com/Ws/ORDAPI.asmx/OrderNewAPI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderNewAPITrackable">
+      <soap12:operation soapAction="https://www.moultonordervision.com/Ws/ORDAPI.asmx/OrderNewAPITrackable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderAPI">
+      <soap12:operation soapAction="https://www.moultonordervision.com/Ws/ORDAPI.asmx/OrderAPI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ORDAPIHttpGet" type="tns:ORDAPIHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="OrderNewAPI">
+      <http:operation location="/OrderNewAPI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderNewAPITrackable">
+      <http:operation location="/OrderNewAPITrackable" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderAPI">
+      <http:operation location="/OrderAPI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ORDAPIHttpPost" type="tns:ORDAPIHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="OrderNewAPI">
+      <http:operation location="/OrderNewAPI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderNewAPITrackable">
+      <http:operation location="/OrderNewAPITrackable" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderAPI">
+      <http:operation location="/OrderAPI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ORDAPI">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">OrderNew Web Service</wsdl:documentation>
+    <wsdl:port name="ORDAPISoap" binding="tns:ORDAPISoap">
+      <soap:address location="https://qcmoultonordervision.com/Ws/ORDAPI.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ORDAPISoap12" binding="tns:ORDAPISoap12">
+      <soap12:address location="https://qcmoultonordervision.com/Ws/ORDAPI.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ORDAPIHttpGet" binding="tns:ORDAPIHttpGet">
+      <http:address location="https://qcmoultonordervision.com/Ws/ORDAPI.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ORDAPIHttpPost" binding="tns:ORDAPIHttpPost">
+      <http:address location="https://qcmoultonordervision.com/Ws/ORDAPI.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

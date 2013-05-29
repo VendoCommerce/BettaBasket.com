@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx?wsdl" docRef="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx" xmlns:q1="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx" binding="q1:OMSOrderTakerSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx" xmlns:q2="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx" binding="q2:OMSOrderTakerSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

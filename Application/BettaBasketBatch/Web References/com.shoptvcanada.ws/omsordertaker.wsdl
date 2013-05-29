@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx">
+      <s:element name="ConnectionTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bool" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConnectionTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConnectionTestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePurchaseOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="order" type="tns:PurchaseOrder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PurchaseOrder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="B2BCustomerEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="B2BCustomerPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="B2BCustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExternalID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RefID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorCompany" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorFName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorLName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorAddress_1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorAddress_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorZip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorCountry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorPhone" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShipToSameAsVendor" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToCompany" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToFName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToLName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToAddress1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToAddress2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToZip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToCountry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MerchantPONumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MerchantOrderNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Handling" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlatRateShipping" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tax" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShipFee" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipMethod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipAccount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="POTerm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderLineItems" type="tns:ArrayOfOrderLineItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="Priority" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LoginClientUserRoleID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bLiveMode" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmailVendor" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderLineItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrderLineItem" nillable="true" type="tns:OrderLineItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderLineItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LineNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuantityOrdered" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="SKU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SKUWMS" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnitPrice" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnitPriceDiscount" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderLineItem3PLID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemBarCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WarehouseName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreatePurchaseOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreatePurchaseOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSalesOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="order" type="tns:SalesOrder" />
+            <s:element minOccurs="1" maxOccurs="1" name="LiveMode" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SalesOrder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TransCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:OrderStatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExternalID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientRoleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillToCompany" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillToFName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillToLName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillToAddress1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillToAddress2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillToCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillToState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillToZip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillToCountry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillToPhone" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShipToSameAsBillTo" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToCompany" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToFName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToLName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToAddress1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToAddress2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToZip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToCountry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipToEmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MerchantPONumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MerchantOrderNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillToShipTo3PLID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PricingDiscount" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="CouponDiscount" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="Handling" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlatRateShipping" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tax" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShipFee" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipMethod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipAccount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="POTerm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderLineItems" type="tns:ArrayOfOrderLineItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="Priority" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RefID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="B2BCustomerEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="B2BCustomerPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="B2BCustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReferrerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameOnCard" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreditCardNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditCardExpMon" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditCardExpYr" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OptIn" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmailCustomer" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderPayments" type="tns:ArrayOfOrderPayment" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestedShipDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestedDeliveryDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderComments" type="tns:ArrayOfOrderComment" />
+          <s:element minOccurs="1" maxOccurs="1" name="BillToResidential" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShipToResidential" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CheckForDuplicates" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HoursForDuplicateCheck" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EDI_TransactionType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EDI_EmailClient" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="EDI_FileName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EDI_NotBefore" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EDI_CancelAfter" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="EDI_Description1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EDI_Description2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EDI_Description3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EDI_Description4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EDI_Description5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipReference_1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipReference_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShipMethod3PLID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CheckOverrideLineItemTotal" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverrideLineItemTotalAmount" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValidateOnlyMOrderID" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="OrderStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="PendingPOQuote" />
+          <s:enumeration value="Processing" />
+          <s:enumeration value="Void" />
+          <s:enumeration value="Decline" />
+          <s:enumeration value="PendingApproval" />
+          <s:enumeration value="Pending" />
+          <s:enumeration value="PendingMailPayment" />
+          <s:enumeration value="OnHold" />
+          <s:enumeration value="Complete" />
+          <s:enumeration value="SuspectedFraud" />
+          <s:enumeration value="PendingReviewPayment" />
+          <s:enumeration value="PendingNetPayment" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfOrderPayment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrderPayment" nillable="true" type="tns:OrderPayment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderPayment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExternalID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentAmount" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="PostPaymentDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOrderComment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OrderComment" nillable="true" type="tns:OrderComment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OrderComment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CommentType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateSalesOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateSalesOrderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateOrderDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BCustomerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BCustomerEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BCustomerPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="lngOMSOrderID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="lngOrdersDetailsID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="lngCustomerID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurrency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="envMode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSKU" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateOrderDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateOrderDetailsResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSKU" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendOrderConfirmation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BCustomerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BCustomerEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BCustomerPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="lngOMSOrderID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bLiveMode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendOrderConfirmationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendOrderConfirmationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewOrderDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BCustomerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BCustomerEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BCustomerPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="lngOrderID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMerchantOrderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtmOrdersFromDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bReturnXML" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewOrderDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ViewOrderDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmailViaWS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BCustomerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BCustomerEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BCustomerPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBCC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBody" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bHTML" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmailViaWSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendEmailViaWSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportOrders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BCustomerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BCustomerEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strB2BCustomerPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtmOrdersFromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTimeZone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTransactionType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMerchantOrderID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportOrdersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportOrdersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConnectionTestSoapIn">
+    <wsdl:part name="parameters" element="tns:ConnectionTest" />
+  </wsdl:message>
+  <wsdl:message name="ConnectionTestSoapOut">
+    <wsdl:part name="parameters" element="tns:ConnectionTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreatePurchaseOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:CreatePurchaseOrder" />
+  </wsdl:message>
+  <wsdl:message name="CreatePurchaseOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:CreatePurchaseOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateSalesOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSalesOrder" />
+  </wsdl:message>
+  <wsdl:message name="CreateSalesOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateSalesOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateOrderDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateOrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="ValidateOrderDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateOrderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendOrderConfirmationSoapIn">
+    <wsdl:part name="parameters" element="tns:SendOrderConfirmation" />
+  </wsdl:message>
+  <wsdl:message name="SendOrderConfirmationSoapOut">
+    <wsdl:part name="parameters" element="tns:SendOrderConfirmationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewOrderDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewOrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="ViewOrderDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewOrderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailViaWSSoapIn">
+    <wsdl:part name="parameters" element="tns:SendEmailViaWS" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailViaWSSoapOut">
+    <wsdl:part name="parameters" element="tns:SendEmailViaWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportOrdersSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportOrders" />
+  </wsdl:message>
+  <wsdl:message name="ExportOrdersSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportOrdersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OMSOrderTakerSoap">
+    <wsdl:operation name="ConnectionTest">
+      <wsdl:input message="tns:ConnectionTestSoapIn" />
+      <wsdl:output message="tns:ConnectionTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePurchaseOrder">
+      <wsdl:input message="tns:CreatePurchaseOrderSoapIn" />
+      <wsdl:output message="tns:CreatePurchaseOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSalesOrder">
+      <wsdl:input message="tns:CreateSalesOrderSoapIn" />
+      <wsdl:output message="tns:CreateSalesOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateOrderDetails">
+      <wsdl:input message="tns:ValidateOrderDetailsSoapIn" />
+      <wsdl:output message="tns:ValidateOrderDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendOrderConfirmation">
+      <wsdl:input message="tns:SendOrderConfirmationSoapIn" />
+      <wsdl:output message="tns:SendOrderConfirmationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewOrderDetails">
+      <wsdl:input message="tns:ViewOrderDetailsSoapIn" />
+      <wsdl:output message="tns:ViewOrderDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailViaWS">
+      <wsdl:input message="tns:SendEmailViaWSSoapIn" />
+      <wsdl:output message="tns:SendEmailViaWSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportOrders">
+      <wsdl:input message="tns:ExportOrdersSoapIn" />
+      <wsdl:output message="tns:ExportOrdersSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OMSOrderTakerSoap" type="tns:OMSOrderTakerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConnectionTest">
+      <soap:operation soapAction="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx/ConnectionTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePurchaseOrder">
+      <soap:operation soapAction="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx/CreatePurchaseOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSalesOrder">
+      <soap:operation soapAction="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx/CreateSalesOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateOrderDetails">
+      <soap:operation soapAction="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx/ValidateOrderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendOrderConfirmation">
+      <soap:operation soapAction="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx/SendOrderConfirmation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewOrderDetails">
+      <soap:operation soapAction="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx/ViewOrderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailViaWS">
+      <soap:operation soapAction="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx/SendEmailViaWS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportOrders">
+      <soap:operation soapAction="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx/ExportOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OMSOrderTakerSoap12" type="tns:OMSOrderTakerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConnectionTest">
+      <soap12:operation soapAction="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx/ConnectionTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePurchaseOrder">
+      <soap12:operation soapAction="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx/CreatePurchaseOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSalesOrder">
+      <soap12:operation soapAction="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx/CreateSalesOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateOrderDetails">
+      <soap12:operation soapAction="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx/ValidateOrderDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendOrderConfirmation">
+      <soap12:operation soapAction="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx/SendOrderConfirmation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewOrderDetails">
+      <soap12:operation soapAction="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx/ViewOrderDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailViaWS">
+      <soap12:operation soapAction="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx/SendEmailViaWS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportOrders">
+      <soap12:operation soapAction="http://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx/ExportOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OMSOrderTaker">
+    <wsdl:port name="OMSOrderTakerSoap" binding="tns:OMSOrderTakerSoap">
+      <soap:address location="https://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OMSOrderTakerSoap12" binding="tns:OMSOrderTakerSoap12">
+      <soap12:address location="https://ws.shoptvcanada.com/omsordertaker/omsordertaker.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
