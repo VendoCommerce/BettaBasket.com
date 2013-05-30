@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using CSBusiness.Web;
 using CSBusiness;
+using CSBusiness.Preference;
 
 namespace CSWebBase
 {
@@ -20,6 +21,16 @@ namespace CSWebBase
             {
                 ClientOrderData.VersionId = item.VersionId;
             }
+        }
+
+        public static string GetPrivacyPolicy()
+        {
+            SitePreference sitePref = CSFactory.GetCacheSitePref();
+
+            if (!sitePref.AttributeValuesLoaded)
+                sitePref.LoadAttributeValues();
+
+            return sitePref.GetAttributeValue<string>("privacypolicy", string.Empty);
         }
     }
 }

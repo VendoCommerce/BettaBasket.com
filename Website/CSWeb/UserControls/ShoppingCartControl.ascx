@@ -67,9 +67,11 @@
                 </table>
             </div>
 
-            <div>
-                <asp:CheckBox ID="chkAdditionItem" runat="server" AutoPostBack="true" OnCheckedChanged="chkAdditionItem_CheckChanged" /> Click here to get an additional Betta Basket
-            </div>
+            <asp:Panel runat="server" Visible="false">
+                <div>
+                    <asp:CheckBox ID="chkAdditionItem" runat="server" AutoPostBack="true" OnCheckedChanged="chkAdditionItem_CheckChanged" /> Click here to get an additional Betta Basket
+                </div>
+            </asp:Panel>
         </div>
     </asp:PlaceHolder>
 </asp:Panel>
