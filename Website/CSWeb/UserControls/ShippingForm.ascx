@@ -1,5 +1,17 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ShippingForm.ascx.cs" Inherits="CSWeb.UserControls.ShippingForm" %>
-<div class="cartA" style="min-height: 594px;"><div style="padding: 0 29px;">
+   <script type="text/javascript" src="/Scripts/autoTab.js"></script>
+<a id="tryitnow" name="tryitnow"></a>
+<div class="cartA">
+<img src="../Content/Images/form_top.jpg" width="298" height="126" />
+  <div class="form_line clearfix">
+        <div class="error-1">
+            <asp:Label ID="lblCountryError" runat="server" Visible="false"></asp:Label></div>
+        <label class="label-1">
+            Country*</label>
+        <asp:DropDownList ID="ddlCountry" runat="server" DataTextField="NAME" DataValueField="COUNTRYID"
+            AutoPostBack="true" OnSelectedIndexChanged="Country_SelectedIndexChanged" CssClass="text-1">
+        </asp:DropDownList>
+    </div>
     <div class="form_line clearfix">
         <div class="error-1">
             <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" Display="Dynamic" ControlToValidate="txtFirstName"></asp:RequiredFieldValidator>
@@ -24,7 +36,7 @@
             <asp:RequiredFieldValidator ID="rfvAddress1" runat="server" Display="Dynamic" ControlToValidate="txtAddress1"></asp:RequiredFieldValidator>
             <asp:Label ID="lblAddress1Error" runat="server" Visible="false"></asp:Label></div>
         <label class="label-1">
-            Shipping Address*</label>
+            Billing Address*</label>
         <asp:TextBox ID="txtAddress1" runat="server" MaxLength="30" CssClass="text-1"></asp:TextBox>
     </div>
     <div class="form_line clearfix">
@@ -47,19 +59,10 @@
             <asp:Label ID="lblStateError" runat="server" Visible="false"></asp:Label></div>
         <label class="label-1">
             State*</label>
-        <asp:DropDownList ID="ddlState" runat="server" DataTextField="NAME" CssClass="select-1"
-            size="1">
+        <asp:DropDownList ID="ddlState" runat="server" DataTextField="NAME" CssClass="text-1">
         </asp:DropDownList>
     </div>
-    <div class="form_line clearfix">
-        <div class="error-1">
-            <asp:Label ID="lblCountryError" runat="server" Visible="false"></asp:Label></div>
-        <label class="label-1">
-            Country*</label>
-        <asp:DropDownList ID="ddlCountry" runat="server" DataTextField="NAME" DataValueField="COUNTRYID"
-            AutoPostBack="true" OnSelectedIndexChanged="Country_SelectedIndexChanged" CssClass="select-1">
-        </asp:DropDownList>
-    </div>
+  
     <div class="form_line clearfix">
         <div class="error-1">
             <asp:RequiredFieldValidator ID="rfvZipCode" runat="server" Display="Dynamic" ControlToValidate="txtZipCode"></asp:RequiredFieldValidator>
@@ -72,10 +75,10 @@
         <div class="error-1">            
             <asp:Label ID="lblPhoneNumberError" runat="server" Visible="false"></asp:Label></div>
         <label class="label-1">
-            Phone*</label>
-        <asp:TextBox ID="txtPhone1" runat="server" MaxLength="3" CssClass="text-1"></asp:TextBox>
-        <asp:TextBox ID="txtPhone2" runat="server" MaxLength="3" CssClass="text-1"></asp:TextBox>
-        <asp:TextBox ID="txtPhone3" runat="server" MaxLength="4" CssClass="text-1"></asp:TextBox>
+            Phone Number*</label>
+        <asp:TextBox ID="txtPhone1" runat="server" MaxLength="3" CssClass="text-3"></asp:TextBox>
+        <asp:TextBox ID="txtPhone2" runat="server" MaxLength="3" CssClass="text-3"></asp:TextBox>
+        <asp:TextBox ID="txtPhone3" runat="server" MaxLength="4" CssClass="text-4"></asp:TextBox>
     </div>
     <div class="form_line clearfix">
         <div class="error-1">
@@ -84,7 +87,7 @@
                 Display="Dynamic" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" />
             <asp:Label ID="lblEmailError" runat="server" Visible="false"></asp:Label></div>
         <label class="label-1">
-            Email*</label>
+            Email Address*</label>
         <asp:TextBox ID="txtEmail" runat="server" MaxLength="30" CssClass="text-1"></asp:TextBox>
     </div>
     <div class="form_line clearfix" style="display: none">
@@ -102,44 +105,17 @@
             <asp:ListItem Value="6" Text="6"></asp:ListItem>
         </asp:DropDownList>
     </div>
-    <div class="form_line clearfix" style="display: none">
-        <div class="error-2">
-            Error</div>
-        <label class="label-3">
-            Choose*</label>
-        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="choosetable">
-            <tr>
-                <td>
-                    <img name="" src="images/choice.png" width="52" height="52" alt="" />
-                </td>
-                <td>
-                    <img name="" src="images/choice.png" width="52" height="52" alt="" />
-                </td>
-                <td>
-                    <img name="" src="images/choice.png" width="52" height="52" alt="" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>
-                        choice 1</label><input type="radio" />
-                </td>
-                <td>
-                    <label>
-                        choice 2</label><input type="radio" />
-                </td>
-                <td>
-                    <label>
-                        choice 3</label><input type="radio" />
-                </td>
-            </tr>
-        </table>
-    </div>
-    </div>
-    <p style="text-align: center; padding: 3px 0;">
-        <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/B2/btn_tryitnow.png"
-            CssClass="form_line_center" OnClick="imgBtn_OnClick" />
-    </p>
-    <p style="text-align: center; padding: 5px 0 13px 0;">
-        <a href="#mbg" class="mbg" style="color: #4f4f4f; font-size: 14px; font-weight: bold;">Money-Back Guarantee</a></p>
+   
+ 
+   <div class="form_line_btn">
+        <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="../content/images/order_now_btn.png"
+            OnClick="imgBtn_OnClick" />
+</div>
+   <div class="form_line_guarantee">
+        <a href="#mbg" class="mbg">30-Day Money-Back Guarantee!</a>
+</div>
+ <div class="form_line_btn">
+ <img src="../Content/Images/ssl.png" />
+ </div>
+
 </div>

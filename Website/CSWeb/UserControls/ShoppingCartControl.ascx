@@ -75,6 +75,6 @@
         </div>
     </asp:PlaceHolder>
 </asp:Panel>
-   <div class="cart_offer" style="padding: 30px 25px 10px 10px;">
-   <strong>*OFFER DETAILS:</strong> As part of our Special TV Trial Offer you can try The ifocus System in the comfort of your own home for only $14.95 with FREE S&amp;H.  If you decide to keep the system, simply do nothing and beginning 30 days following your date of purchase you will be charged four easy monthly payments of $49.95, plus tax.  All orders are backed by our 6 month 100% money back guarantee.  Watch your child achieve their true potential &mdash; starting today and lasting into the future!
+   <div class="cart_offer">
+   
            </div>

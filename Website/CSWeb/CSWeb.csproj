@@ -169,6 +169,7 @@
     <Content Include="Admin\VersionReport.aspx" />
     <Content Include="AuthorizeOrder.aspx" />
     <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bottomcta.html" />
     <Content Include="Canada\CA_A1\AddProduct.aspx" />
     <Content Include="Canada\CA_A1\AuthorizeOrder.aspx" />
     <Content Include="Canada\CA_A1\CardDecline.aspx" />
@@ -199,6 +200,12 @@
     <Content Include="Canada\CA_A1\UserControls\TrackingPixels.ascx" />
     <Content Include="CardDecline.aspx" />
     <Content Include="Cart.aspx" />
+    <Content Include="CheckoutExpired.aspx" />
+    <Content Include="CheckoutSessionExpired.aspx" />
+    <Content Include="comingsoon.html" />
+    <Content Include="comingsoon_ca.html" />
+    <Content Include="Content\Flash\ctavideo.mp4" />
+    <Content Include="Content\Flash\ctavideo_ca.mp4" />
     <Content Include="Content\Images\admin\add.gif" />
     <Content Include="Content\Images\admin\amexCard.gif" />
     <Content Include="Content\Images\admin\cancel.gif" />
@@ -228,8 +235,39 @@
     <Content Include="Content\Images\admin\upsell_green.jpg" />
     <Content Include="Content\Images\admin\upsell_laundrypole.jpg" />
     <Content Include="Content\Images\admin\yes_btn.png" />
+    <Content Include="Content\Images\asotv.jpg" />
+    <Content Include="Content\Images\betta_comingsoon.jpg" />
+    <Content Include="Content\Images\betta_comingsoon_ca.jpg" />
+    <Content Include="Content\Images\betta_logo.png" />
+    <Content Include="Content\Images\bg.jpg" />
+    <Content Include="Content\Images\bottom_cta.jpg" />
+    <Content Include="Content\Images\cart_product_pic.jpg" />
+    <Content Include="Content\Images\checkmark.png" />
     <Content Include="Content\Images\continue_shopping_btn.png" />
+    <Content Include="Content\Images\form_top.jpg" />
     <Content Include="Content\Images\gotocart_btn.png" />
+    <Content Include="Content\Images\header_bg.jpg" />
+    <Content Include="Content\Images\header_ordernow_btn.png" />
+    <Content Include="Content\Images\home_bottom.jpg" />
+    <Content Include="Content\Images\home_leftside.png" />
+    <Content Include="Content\Images\how2.jpg" />
+    <Content Include="Content\Images\how3.jpg" />
+    <Content Include="Content\Images\how4.jpg" />
+    <Content Include="Content\Images\how5.jpg" />
+    <Content Include="Content\Images\how6.jpg" />
+    <Content Include="Content\Images\how_1.jpg" />
+    <Content Include="Content\Images\nothanks_btn.jpg" />
+    <Content Include="Content\Images\orange_bullet.png" />
+    <Content Include="Content\Images\order_now_btn.png" />
+    <Content Include="Content\Images\right_basket.jpg" />
+    <Content Include="Content\Images\ssl.png" />
+    <Content Include="Content\Images\upsell_additional.jpg" />
+    <Content Include="Content\Images\upsell_arrow.png" />
+    <Content Include="Content\Images\upsell_hooks.jpg" />
+    <Content Include="Content\Images\upsell_multiple.jpg" />
+    <Content Include="Content\Images\upsell_rush.jpg" />
+    <Content Include="Content\Images\videostop.jpg" />
+    <Content Include="Content\Images\yes_btn.jpg" />
     <Content Include="GetTotals.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\Flash\ctavideo.flv" />
@@ -284,6 +322,9 @@
     <Content Include="appsettings.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="popups.html" />
+    <Content Include="Scripts\jwplayer\glow.zip" />
+    <Content Include="Scripts\jwplayer\glow2.zip" />
     <None Include="Service References\HitLinks\CSWeb.HitLinks.Data.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -302,10 +343,12 @@
     <Content Include="Scripts\autoTab.js" />
     <Content Include="Scripts\fancybox\blank.gif" />
     <Content Include="Scripts\fancybox\fancybox_loading.gif" />
+    <Content Include="Scripts\fancybox\fancybox_overlay.png" />
     <Content Include="Scripts\fancybox\fancybox_sprite.png" />
     <Content Include="Scripts\fancybox\helpers\fancybox_buttons.png" />
     <Content Include="Scripts\fancybox\helpers\jquery.fancybox-buttons.css" />
     <Content Include="Scripts\fancybox\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Scripts\fancybox\helpers\jquery.fancybox-media.js" />
     <Content Include="Scripts\fancybox\helpers\jquery.fancybox-thumbs.css" />
     <Content Include="Scripts\fancybox\helpers\jquery.fancybox-thumbs.js" />
     <Content Include="Scripts\fancybox\jquery.fancybox.css" />
@@ -313,6 +356,82 @@
     <Content Include="Scripts\fancybox\jquery.fancybox.pack.js" />
     <Content Include="Scripts\global.js" />
     <Content Include="Scripts\jquery.cycle.all.js" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\background.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\blankButton.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\divider.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\fullscreenButton.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\fullscreenButtonOver.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\muteButton.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\muteButtonOver.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\normalscreenButton.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\normalscreenButtonOver.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\pauseButton.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\pauseButtonOver.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\playButton.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\playButtonOver.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\timeSliderBuffer.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\timeSliderCapLeft.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\timeSliderCapRight.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\timeSliderProgress.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\timeSliderRail.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\unmuteButton.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\unmuteButtonOver.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\volumeSliderBuffer.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\volumeSliderProgress.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\controlbar\volumeSliderRail.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\display\background.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\display\bufferIcon.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\display\muteIcon.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\display\playIcon.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\dock\button.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\glow.xml" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\playlist\item.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\playlist\itemOver.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\playlist\sliderCapBottom.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\playlist\sliderCapTop.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\playlist\sliderRail.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\playlist\sliderThumb.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\sharing\embedScreen.png" />
+    <Content Include="Scripts\jwplayer\glow2\glow\glow\glow\sharing\shareScreen.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\background.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\blankButton.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\divider.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\fullscreenButton.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\fullscreenButtonOver.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\muteButton.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\muteButtonOver.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\normalscreenButton.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\normalscreenButtonOver.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\pauseButton.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\pauseButtonOver.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\playButton.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\playButtonOver.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\timeSliderBuffer.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\timeSliderCapLeft.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\timeSliderCapRight.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\timeSliderProgress.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\timeSliderRail.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\unmuteButton.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\unmuteButtonOver.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\volumeSliderBuffer.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\volumeSliderProgress.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\controlbar\volumeSliderRail.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\display\background.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\display\bufferIcon.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\display\muteIcon.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\display\playIcon.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\dock\button.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\glow.xml" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\playlist\item.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\playlist\itemOver.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\playlist\sliderCapBottom.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\playlist\sliderCapTop.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\playlist\sliderRail.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\playlist\sliderThumb.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\sharing\embedScreen.png" />
+    <Content Include="Scripts\jwplayer\glow\glow\glow\sharing\shareScreen.png" />
+    <Content Include="Scripts\jwplayer\jwplayer.js" />
+    <Content Include="Scripts\jwplayer\player.swf" />
     <Content Include="Scripts\ping.js" />
     <Content Include="Scripts\snippet.js" />
     <Content Include="Scripts\s_code.js" />
@@ -322,6 +441,7 @@
     <Content Include="Styles\midstyles.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Testimonials.aspx" />
+    <Content Include="upsells.aspx" />
     <Content Include="UserControls\AddedToCartPopup.ascx" />
     <Content Include="UserControls\BillingCreditForm.ascx" />
     <Content Include="UserControls\CardDecline.ascx" />
@@ -367,6 +487,7 @@
     <Content Include="UserControls\ShoppingCartControl.ascx" />
     <Content Include="UserControls\SiteCatalystPixel.ascx" />
     <Content Include="UserControls\TrackingPixels.ascx" />
+    <Content Include="UserControls\VerticalPane.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -934,6 +1055,18 @@
     </Compile>
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutExpired.aspx.cs">
+      <DependentUpon>CheckoutExpired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutExpired.aspx.designer.cs">
+      <DependentUpon>CheckoutExpired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutSessionExpired.aspx.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutSessionExpired.aspx.designer.cs">
+      <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

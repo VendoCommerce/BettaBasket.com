@@ -13,7 +13,7 @@
     <div class="cart_content_B clearfix">
 
     <div class="cart_left">
-        <h2>Shopping Basket</h2>
+        <h2>Shopping Cart</h2>
         <div class="horizontal_dots">
         </div>
         
@@ -26,15 +26,15 @@
 <h2 style="padding-bottom: 15px;">
 
 
-                Order Information</h2>
+                Billing Information</h2>
                 <div class="form_line clearfix">
-                <div class="error-2">
-                    </div>
-                <label class="label-2" style="width: 170px;">
+               
+                     <asp:CheckBox ID="cbBillingDifferent" runat="server" CssClass="checkbox-left" OnCheckedChanged="cbShippingDifferent_CheckedChanged"
+                    AutoPostBack="true" Checked="true" />
+                <label class="label-2">
                     Billing information is same<br />
           as Shipping</label>
-                <asp:CheckBox ID="cbBillingDifferent" runat="server" CssClass="checkbox-right" OnCheckedChanged="cbShippingDifferent_CheckedChanged"
-                    AutoPostBack="true" Checked="true" />
+               
             </div>                  
             
             <asp:Panel ID="pnlBillingAddress" runat="server" Visible="false">
@@ -131,7 +131,7 @@
                 <asp:RequiredFieldValidator ID="rfvExpYear" runat="server" Display="Dynamic"
                     ControlToValidate="ddlExpYear"></asp:RequiredFieldValidator>
                     <asp:Label ID="lblExpDate" runat="server" Visible="false"></asp:Label></div>
-                <asp:DropDownList ID="ddlExpMonth" runat="server" CssClass="text-3">
+                <asp:DropDownList ID="ddlExpMonth" runat="server" CssClass="text-2">
                     <asp:ListItem Value="" Text=""></asp:ListItem>
                     <asp:ListItem Value="1">01</asp:ListItem>
                     <asp:ListItem Value="2">02</asp:ListItem>
@@ -146,7 +146,7 @@
                     <asp:ListItem Value="11">11</asp:ListItem>
                     <asp:ListItem Value="12">12</asp:ListItem>
                 </asp:DropDownList>
-                <asp:DropDownList ID="ddlExpYear" runat="server" CssClass="text-3">
+                <asp:DropDownList ID="ddlExpYear" runat="server" CssClass="text-2">
                     <asp:ListItem Value="" Text=""></asp:ListItem>
                         <asp:ListItem Value="2013">2013</asp:ListItem>
                         <asp:ListItem Value="2014">2014</asp:ListItem>
@@ -162,21 +162,14 @@
             </div>
             <div class="form_line clearfix">
                 <label class="label-3">
-                    Card Number*</label>
+                    Credit Card Number*</label>
                 <div class="error-2">
                     <asp:Label ID="lblCCNumberError" runat="server" Visible="false"></asp:Label></div>
-                <table cellpadding="0" cellspacing="0" border="0">
-                    <tr>
-                        <td><asp:TextBox ID="txtCCNumber1" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="txtCCNumber1" runat="server" Display="Dynamic" ErrorMessage="*" /></td>
-                        <td><asp:TextBox ID="txtCCNumber2" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="txtCCNumber2" runat="server" Display="Dynamic" ErrorMessage="*" /></td>
-                        <td><asp:TextBox ID="txtCCNumber3" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="txtCCNumber3" runat="server" Display="Dynamic" ErrorMessage="*" /></td>
-                        <td><asp:TextBox ID="txtCCNumber4" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate="txtCCNumber4" runat="server" Display="Dynamic" ErrorMessage="*" /></td>
-                    </tr>
-                </table>
+               <asp:TextBox ID="txtCCNumber1" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="txtCCNumber1" runat="server" Display="Dynamic" ErrorMessage="*" /><asp:TextBox ID="txtCCNumber2" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="txtCCNumber2" runat="server" Display="Dynamic" ErrorMessage="*" /><asp:TextBox ID="txtCCNumber3" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="txtCCNumber3" runat="server" Display="Dynamic" ErrorMessage="*" /><asp:TextBox ID="txtCCNumber4" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate="txtCCNumber4" runat="server" Display="Dynamic" ErrorMessage="*" />
             </div>
             <div class="form_line clearfix">
                 <label class="label-3">
-                    Card Verification #* <a class="cvv" href="#" style="display:none">what's this?</a>
+                    Card Verification #*
                 </label>
                 <div class="error-2">
                     <asp:RequiredFieldValidator ID="rfvCVV" ControlToValidate="txtCvv" runat="server" Display="Dynamic" />
@@ -184,20 +177,19 @@
                 <asp:TextBox ID="txtCvv" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox>
             </div>
             <div class="form_line clearfix">
-                <asp:checkbox ID="chkboxOffers" runat="server" CssClass="checkbox-right" />
-                <label class="label-2" style="width: 220px; text-transform: uppercase; font-weight: normal; font-size: 10px;">
-                    Send me updates and special offers <br />
-from focus education!</label>
+                <asp:checkbox ID="chkboxOffers" runat="server" CssClass="checkbox-left" />
+                <label class="label-2">
+                    Send me new product updates and special offers</label>
                 
             </div>
             
             <div class="form_line_btn">
                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/B2/btn_OrderNow.png"
-                    CssClass="form_line_center" OnClick="imgBtn_OnClick" />
+                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/order_now_btn.png"
+                    OnClick="imgBtn_OnClick" />
             </div>
-            <div class="form_line_guarantee" style="display:none"><a href="#">View 30-Day Guarantee</a></div>
-           
+          
+    
         </div>
     <!-- end cartB -->
   
