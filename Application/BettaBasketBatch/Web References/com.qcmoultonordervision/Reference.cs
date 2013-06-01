@@ -20,6 +20,7 @@ namespace BettaBasketBatch.com.qcmoultonordervision {
     using System.Web.Services.Protocols;
     using System.ComponentModel;
     using System.Xml.Serialization;
+    using System.Net;
     
     
     /// <remarks/>
@@ -36,7 +37,15 @@ namespace BettaBasketBatch.com.qcmoultonordervision {
         private System.Threading.SendOrPostCallback OrderAPIOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
-        
+		
+            protected override WebRequest GetWebRequest(Uri uri)
+    {
+        HttpWebRequest webRequest = (HttpWebRequest) base.GetWebRequest(uri);
+        //Setting KeepAlive to false
+        webRequest.KeepAlive = false;
+        return webRequest;
+    }
+	
         /// <remarks/>
         public ORDAPI() {
             this.Url = global::BettaBasketBatch.Properties.Settings.Default.AhhBraBatch_com_qcmoultonordervision_ORDAPI;

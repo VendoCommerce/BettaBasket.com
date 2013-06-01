@@ -186,10 +186,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="https://qcmoultonordervision.com/Ws/ORDAPI.asmx">
+    <WebReferenceUrl Include="https://moultonordervision.com/Ws/ORDAPI.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\com.qcmoultonordervision\</RelPath>
-      <UpdateFromURL>https://qcmoultonordervision.com/Ws/ORDAPI.asmx</UpdateFromURL>
+      <UpdateFromURL>https://moultonordervision.com/Ws/ORDAPI.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

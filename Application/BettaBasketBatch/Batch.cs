@@ -24,9 +24,6 @@ using Moulton = AhhBraBatch.Application_Code.BusinessObjects;
 using CSBusiness.OrderManagement;
 using CSBusiness;
 using CSCore.Utils;
-
-
-
 namespace Com.ConversionSystems
 {
     public class Batch : Com.ConversionSystems.UI.BasePage
@@ -420,6 +417,8 @@ namespace Com.ConversionSystems
                     {
                         List<Sku> orderSkuItems = OrderSkus.FindAll(x => x.OrderId == orderItem.OrderId);
 
+                        //System.Net.ServicePointManager.CertificatePolicy = new TrustAllCertificatePolicy();
+
                         _dtOrderSKU = null;
                         _dtCustomerBillingAddress = null;
                         _dtCustomerShippingAddress = null;
@@ -572,6 +571,7 @@ namespace Com.ConversionSystems
                         {
 
                             BettaBasketBatch.com.qcmoultonordervision.ORDAPI _MoultonOrderAPI = new BettaBasketBatch.com.qcmoultonordervision.ORDAPI();
+                            
                             XmlNode x = null;
                             x = _MoultonOrderAPI.OrderNewAPI("TMGC_CS", "XKSb73j3j3ddcjMn0b22", _OrderOrderHeader.GROUP_CODE, _OrderOrderHeader.CL_NO, _OrderOrderHeader.PROJECT, "new_order_TMGC", xmlString);
                             //ObjectToXml(NewSalesOrder, "C:\\batchstaging\\BatchProcesses\\NonoBatchFiles\\UK\\" + NewSalesOrder.MerchantOrderNumber.ToString() + ".xml"); //For Testing
@@ -1080,5 +1080,19 @@ namespace Com.ConversionSystems
             
         }
     }
-  
+
+    public class TrustAllCertificatePolicy : System.Net.ICertificatePolicy
+    {
+        public TrustAllCertificatePolicy()
+        { }
+
+        public bool CheckValidationResult(ServicePoint sp,
+         System.Security.Cryptography.X509Certificates.X509Certificate cert, WebRequest req, int problem)
+        {
+            return true;
+        }
+    }
+
+
+
 }
