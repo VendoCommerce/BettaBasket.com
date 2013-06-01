@@ -31,13 +31,22 @@ namespace CSWeb.UserControls {
         protected global::System.Web.UI.WebControls.DataList dlordersList;
         
         /// <summary>
-        /// LiteralSubTotal control.
+        /// LiteralTableRows control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LiteralSubTotal;
+        protected global::System.Web.UI.WebControls.Literal LiteralTableRows;
+        
+        /// <summary>
+        /// pnlRushLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlRushLabel;
         
         /// <summary>
         /// pnlPromotionLabel control.
@@ -47,6 +56,51 @@ namespace CSWeb.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlPromotionLabel;
+        
+        /// <summary>
+        /// LiteralSubTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LiteralSubTotal;
+        
+        /// <summary>
+        /// LiteralShipping control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LiteralShipping;
+        
+        /// <summary>
+        /// pnlRush control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlRush;
+        
+        /// <summary>
+        /// LiteralRushShipping control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LiteralRushShipping;
+        
+        /// <summary>
+        /// LiteralTax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LiteralTax;
         
         /// <summary>
         /// pnlPromotionalAmount control.
@@ -65,51 +119,6 @@ namespace CSWeb.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPromotionPrice;
-        
-        /// <summary>
-        /// LiteralShipping control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LiteralShipping;
-        
-        /// <summary>
-        /// pnlRushLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlRushLabel;
-        
-        /// <summary>
-        /// pnlRush control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlRush;
-        
-        /// <summary>
-        /// LiteralExpeditedShipping control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LiteralExpeditedShipping;
-        
-        /// <summary>
-        /// LiteralTax control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LiteralTax;
         
         /// <summary>
         /// LiteralTotal control.
@@ -184,6 +193,15 @@ namespace CSWeb.UserControls {
         protected global::System.Web.UI.WebControls.Literal LiteralCountry;
         
         /// <summary>
+        /// LiteralEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LiteralEmail;
+        
+        /// <summary>
         /// LiteralName_b control.
         /// </summary>
         /// <remarks>
@@ -245,14 +263,5 @@ namespace CSWeb.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal LiteralCountry_b;
-        
-        /// <summary>
-        /// LiteralEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LiteralEmail;
     }
 }

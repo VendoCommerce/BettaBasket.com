@@ -4,7 +4,7 @@
 <div class="header-nav">
 <div class="nav"><a href="/index.aspx">Home</a>|<a href="/howitworks.aspx">How It Works</a>|<a href="/contact.aspx">Contact Us</a></div>
 <div class="nav-asotv"><img src="/Content/Images/asotv.jpg" width="42" height="33" alt="As Seen on TV" /></div>
-<a class="nav-try" href="#tryitnow"><img src="/Content/Images/header_ordernow_btn.png" width="238" height="59" alt="Order Now!" /></a>
+<a class="nav-try try" href="#tryitnow"><img src="/Content/Images/header_ordernow_btn.png" width="238" height="59" alt="Order Now!" /></a>
 </div>
 <div class="header-main">
 <a class="nav-logo" href="/index.aspx"><img src="/Content/Images/betta_logo.png" width="159" height="90" alt="Betta Baskets" /></a>

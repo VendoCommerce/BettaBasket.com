@@ -42,7 +42,15 @@ namespace CSWeb.UserControls
             if (orderId > 0)
             {
                 Order orderData = CSResolve.Resolve<IOrderService>().GetOrderDetails(orderId);
-                dlordersList.DataSource = orderData.SkuItems;
+
+                List<Sku> skus = orderData.SkuItems;
+
+                for (int i = 0; i < skus.Count; i++)
+                {
+                    skus[i].ImagePath = CSResolve.Resolve<ISkuService>().GetSkuByID(skus[i].SkuId).ImagePath;
+                }
+
+                dlordersList.DataSource = skus;
                 dlordersList.DataBind();
 
                 LiteralSubTotal.Text = orderData.SubTotal.ToString("C");

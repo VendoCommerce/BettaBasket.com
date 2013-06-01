@@ -38,6 +38,16 @@
             </div>                  
             
             <asp:Panel ID="pnlBillingAddress" runat="server" Visible="false">
+               <div class="form_line clearfix">
+                    <div class="error-1">
+                        <asp:Label ID="lblBillingCountryError" runat="server" Visible="false"></asp:Label></div>
+                    <label class="label-1">
+                        Country*</label>
+                    <asp:DropDownList ID="ddlBillingCountry" runat="server" DataTextField="NAME" DataValueField="COUNTRYID"
+                        AutoPostBack="true" OnSelectedIndexChanged="BillingCountry_SelectedIndexChanged"
+                        CssClass="text-1">
+                    </asp:DropDownList>
+                </div>
                 <div class="form_line clearfix">
                     <div class="error-1">
                         <asp:RequiredFieldValidator ID="rfvBillingFirstName" runat="server" Display="Dynamic"
@@ -83,16 +93,7 @@
                         City*</label>
                     <asp:TextBox ID="txtBillingCity" runat="server" MaxLength="30" CssClass="text-1"></asp:TextBox>
                 </div>
-                <div class="form_line clearfix">
-                    <div class="error-1">
-                        <asp:Label ID="lblBillingCountryError" runat="server" Visible="false"></asp:Label></div>
-                    <label class="label-1">
-                        Country*</label>
-                    <asp:DropDownList ID="ddlBillingCountry" runat="server" DataTextField="NAME" DataValueField="COUNTRYID"
-                        AutoPostBack="true" OnSelectedIndexChanged="BillingCountry_SelectedIndexChanged"
-                        CssClass="text-1">
-                    </asp:DropDownList>
-                </div>
+             
                 <div class="form_line clearfix">
                     <div class="error-1">
                         <asp:Label ID="lblBillingStateError" runat="server" Visible="false"></asp:Label></div>

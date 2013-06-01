@@ -2,6 +2,7 @@
 window.onload = function() {
   scrollTo(0,0);
 }
+
 $(document).ready(function () {
     $(".fancybox").fancybox();
 
@@ -11,7 +12,7 @@ $(document).ready(function () {
         wrapCSS: 'nowrapper',
         padding: 0,
         width: 690,
-        height: 370,
+        height: 320,
         autoSize: false,
         scrolling: 'no',
         helpers: {
@@ -39,15 +40,17 @@ $(document).ready(function () {
     });
 
 
-$('a,area').click(function(){
+
+});
+
+$(document).ready(function () {
+$('a.try,area.try').click(function(){
     $('html, body').animate({
         scrollTop: $( $.attr(this, 'href') ).offset().top
     }, 500);
     return false;
 });
 });
-
-
 
 function MM_showHideLayers() { //v9.0
     var i, p, v, obj, args = MM_showHideLayers.arguments;
