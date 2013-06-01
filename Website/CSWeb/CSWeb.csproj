@@ -239,6 +239,7 @@
     <Content Include="Content\Images\betta_logo.png" />
     <Content Include="Content\Images\bg.jpg" />
     <Content Include="Content\Images\bottom_cta.jpg" />
+    <Content Include="Content\Images\cart_product_hooks.jpg" />
     <Content Include="Content\Images\cart_product_pic.jpg" />
     <Content Include="Content\Images\cart_product_pic.png" />
     <Content Include="Content\Images\checkmark.png" />
@@ -275,6 +276,7 @@
     <Content Include="Content\Images\upsell_multiple.jpg" />
     <Content Include="Content\Images\upsell_rush.jpg" />
     <Content Include="Content\Images\videostop.jpg" />
+    <Content Include="Content\Images\White Dot.JPG" />
     <Content Include="Content\Images\yes_btn.jpg" />
     <Content Include="Content\Images\yes_btn.png" />
     <Content Include="GetTotals.aspx" />
