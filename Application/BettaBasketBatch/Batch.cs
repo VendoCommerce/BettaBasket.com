@@ -24,6 +24,7 @@ using Moulton = AhhBraBatch.Application_Code.BusinessObjects;
 using CSBusiness.OrderManagement;
 using CSBusiness;
 using CSCore.Utils;
+using CSBusiness.Resolver;
 namespace Com.ConversionSystems
 {
     public class Batch : Com.ConversionSystems.UI.BasePage
@@ -411,6 +412,7 @@ namespace Com.ConversionSystems
                 Hashtable AllItems = new OrderManager().GetBatchProcessOrders();
                 List<Order> orders = (List<Order>)AllItems["allOrders"];
                 List<Sku> OrderSkus = (List<Sku>)AllItems["allOrderSkus"];
+                
                 foreach (Order orderItem in orders)
                 {
                     try
@@ -501,7 +503,10 @@ namespace Com.ConversionSystems
                         _OrderOrderHeader.BILL_TO_ADDR_1 = orderItem.CustomerInfo.BillingAddress.Address1;
                         _OrderOrderHeader.BILL_TO_ADDR_2 = orderItem.CustomerInfo.BillingAddress.Address2;
                         _OrderOrderHeader.BILL_TO_CITY = orderItem.CustomerInfo.BillingAddress.City;
-                        _OrderOrderHeader.BILL_TO_ST = orderItem.CustomerInfo.BillingAddress.StateProvinceName;
+                        _OrderOrderHeader.BILL_TO_ST = StateManager.GetAllStates(orderItem.CustomerInfo.BillingAddress.CountryId).Find(x =>
+                        {
+                            return x.StateProvinceId == orderItem.CustomerInfo.BillingAddress.StateProvinceId;
+                        }).Abbreviation.Trim();
                         _OrderOrderHeader.BILL_TO_ZIP = orderItem.CustomerInfo.BillingAddress.ZipPostalCode;
                         _OrderOrderHeader.BILL_TO_COUNTRY_CODE = orderItem.CustomerInfo.BillingAddress.CountryCode.Trim();
 
@@ -513,7 +518,10 @@ namespace Com.ConversionSystems
                         _OrderOrderHeader.ADDR_1 = orderItem.CustomerInfo.ShippingAddress.Address1;
                         _OrderOrderHeader.ADDR_2 = orderItem.CustomerInfo.ShippingAddress.Address2;
                         _OrderOrderHeader.CITY = orderItem.CustomerInfo.ShippingAddress.City;
-                        _OrderOrderHeader.ST = orderItem.CustomerInfo.ShippingAddress.StateProvinceName;
+                        _OrderOrderHeader.ST = StateManager.GetAllStates(orderItem.CustomerInfo.ShippingAddress.CountryId).Find(x =>
+                        {
+                            return x.StateProvinceId == orderItem.CustomerInfo.ShippingAddress.StateProvinceId;
+                        }).Abbreviation.Trim();
                         _OrderOrderHeader.ZIP = orderItem.CustomerInfo.ShippingAddress.ZipPostalCode;
                         _OrderOrderHeader.COUNTRY_CODE = orderItem.CustomerInfo.ShippingAddress.CountryCode.Trim();
                         _OrderOrderHeader.EMAIL = orderItem.Email;
