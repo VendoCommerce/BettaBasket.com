@@ -12,7 +12,7 @@
 <meta name="description" content="Show Off Your New Green Thumb - with Betta Basket! Growing healthy flowers and plants is now easier than ever!">
 <meta name="keywords" content="betta basket, gardening, green thumb, air streaming, flowers, plants, hanging baskets" />
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="/scripts/fancybox/jquery.fancybox.pack.js"></script>
 <link href="/scripts/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="/scripts/global.js"></script>
