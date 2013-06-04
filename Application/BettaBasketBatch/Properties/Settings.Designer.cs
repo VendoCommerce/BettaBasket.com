@@ -36,7 +36,7 @@ namespace BettaBasketBatch.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://qcmoultonordervision.com/Ws/ORDAPI.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://moultonordervision.com/Ws/ORDAPI.asmx")]
         public string AhhBraBatch_com_qcmoultonordervision_ORDAPI {
             get {
                 return ((string)(this["AhhBraBatch_com_qcmoultonordervision_ORDAPI"]));

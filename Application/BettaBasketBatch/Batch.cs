@@ -444,7 +444,7 @@ namespace Com.ConversionSystems
 
                         _OrderOrderHeader.PAY_TYPE = Helper.AppSettings["PAY_TYPE"];
                         _OrderOrderHeader.NUM_PYMNTS = Helper.AppSettings["NUMOFPAYMENTS"];
-                        _OrderOrderHeader.UNIQUEID = "CSPS" + _intOrderID.ToString();
+                        _OrderOrderHeader.UNIQUEID = "BETTA" + _intOrderID.ToString();
                         _OrderOrderHeader.HAS_FINANCIAL = "Y";                        
                         _OrderOrderHeader.SRC_CD = Helper.AppSettings["CSOURCE"];
                         if (orderItem.VersionName.ToLower().Equals("canada"))
