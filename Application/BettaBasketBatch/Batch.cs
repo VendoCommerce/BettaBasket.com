@@ -796,19 +796,19 @@ namespace Com.ConversionSystems
             StringBuilder sb = new StringBuilder();
             MailMessage message = new MailMessage();
             message.To.Add(new MailAddress(DeclineToEmail));
-            message.From = new MailAddress("info@plugnsafe.com");
+            message.From = new MailAddress("info@bettabasket.com");
             string sendemailto1 = DeclineToEmail;
 
             message.Subject = "Unable to Process Your Order";
             sb.Append("Dear").Append(" ").Append(FirstName).Append(" ").Append(LastName).Append(",<br /><br />");
-            sb.Append("Thank you for placing an order with Plug & Safe.<br /><br />");
+            sb.Append("Thank you for placing an order with Betta Basket.<br /><br />");
             sb.Append("Unfortunately, we were not able to authorize your credit card and submit your order for processing.<br /><br />");
-            sb.Append("Please visit our Website (http://www.plugnsafe.com) and place an order with a new card.<br /><br />");
+            sb.Append("Please visit our Website (http://www.bettabasket.com) and place an order with a new card.<br /><br />");
             sb.Append("Thank you and have a great day!<br />");
             sb.Append("--------------------------------------------------------<br />");
             sb.Append("<br /><br />");
-            sb.Append("Plug & Safe<br />");
-            sb.Append("cs@plugnsafe.com<br />");
+            sb.Append("Betta Basket<br />");
+            
 
             string st;
             st = sb.ToString();
