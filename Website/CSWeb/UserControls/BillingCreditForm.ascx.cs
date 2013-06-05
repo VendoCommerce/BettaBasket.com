@@ -113,6 +113,7 @@ namespace CSWeb.UserControls
 
         protected void BillingCountry_SelectedIndexChanged(object sender, System.EventArgs e)
         {
+            BindBillingRegions();
             BindCartSummary();
         }
 

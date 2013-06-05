@@ -40,6 +40,24 @@ namespace CSWeb.UserControls {
         protected global::System.Web.UI.WebControls.Panel pnlBillingAddress;
         
         /// <summary>
+        /// lblBillingCountryError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBillingCountryError;
+        
+        /// <summary>
+        /// ddlBillingCountry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlBillingCountry;
+        
+        /// <summary>
         /// rfvBillingFirstName control.
         /// </summary>
         /// <remarks>
@@ -155,24 +173,6 @@ namespace CSWeb.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBillingCity;
-        
-        /// <summary>
-        /// lblBillingCountryError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBillingCountryError;
-        
-        /// <summary>
-        /// ddlBillingCountry control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlBillingCountry;
         
         /// <summary>
         /// lblBillingStateError control.

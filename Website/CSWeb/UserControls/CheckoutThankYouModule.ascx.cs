@@ -33,7 +33,9 @@ namespace CSWeb.UserControls
                 orderId = CartContext.OrderId;
             if (!this.IsPostBack)
             {
-                BindData();                
+                BindData();
+
+                OrderHelper.SendOrderCompletedEmail(orderId);
             }
         }
 

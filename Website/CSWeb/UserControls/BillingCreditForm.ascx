@@ -178,7 +178,7 @@
                 <asp:TextBox ID="txtCvv" runat="server" CssClass="text-4" MaxLength="4"></asp:TextBox>
             </div>
             <div class="form_line clearfix">
-                <asp:checkbox ID="chkboxOffers" runat="server" CssClass="checkbox-left" />
+                <asp:checkbox ID="chkboxOffers" runat="server" CssClass="checkbox-left" Checked="true" />
                 <label class="label-2">
                     Send me new product updates and special offers</label>
                 
