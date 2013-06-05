@@ -415,6 +415,7 @@
     <Content Include="Styles\admin.css" />
     <Content Include="Styles\cart_styles.css" />
     <Content Include="Styles\global.css" />
+    <Content Include="Styles\global_print.css" />
     <Content Include="Styles\midstyles.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Testimonials.aspx" />
@@ -842,12 +843,14 @@
     </Compile>
     <Compile Include="CheckoutExpired.aspx.cs">
       <DependentUpon>CheckoutExpired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CheckoutExpired.aspx.designer.cs">
       <DependentUpon>CheckoutExpired.aspx</DependentUpon>
     </Compile>
     <Compile Include="CheckoutSessionExpired.aspx.cs">
       <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CheckoutSessionExpired.aspx.designer.cs">
       <DependentUpon>CheckoutSessionExpired.aspx</DependentUpon>

@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document...Conversion Systems */
+#receipt_content h1, .itemprint {
+	display: block;	
+}
+
+
+.itemimg, .printer, .horizontal_dots {
+	display: none;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+* html .clearfix {
+	zoom: 1;
+} /* IE6 */
+*:first-child+html .clearfix {
+	zoom: 1;
+} /* IE7 */
