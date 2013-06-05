@@ -19,23 +19,17 @@ namespace CSWeb.Root.Store
             if(!Page.IsPostBack)
             {            
             SitePreference sitePrefCache = CSFactory.GetCacheSitePref();
-            if (Request.Url.ToString().ToLower().Contains("plugnsafe.ca") || Request.Url.ToString().ToLower().Contains("plugandsafe.ca"))
-            {
-                Response.Redirect("https://www.plugnsafe.com/canada?" + Request.QueryString);
-            }
-            if (Request.Url.ToString().ToLower().Contains("plugandsafe.com"))
-            {
-                Response.Redirect("https://www.plugnsafe.com?" + Request.QueryString);
-            }
+            
             if (!sitePrefCache.GeoLocationService)
             {
                 string GeoCoountry = "";
                 GeoCoountry = CommonHelper.GetGeoTargetLocation(CommonHelper.IpAddress(HttpContext.Current));
                 if (GeoCoountry.Equals("canada"))
                 {
-                    Response.Redirect("https://www.plugnsafe.com/canada/?" + Request.QueryString);
+                    Response.Redirect("https://www.bettabasket.ca?" + Request.QueryString);
                 }
             }
+
             if (Request.Headers["X-HTTPS"] != null)
             {
                 if (Request.Headers["X-HTTPS"].ToLower().Equals("no"))
