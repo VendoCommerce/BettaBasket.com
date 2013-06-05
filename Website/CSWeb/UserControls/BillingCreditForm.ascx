@@ -184,10 +184,14 @@
                 
             </div>
             
-            <div class="form_line_btn">
+            <div class="form_line_btn" style="z-index: 100000">
                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
                 <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/order_now_btn.png"
                     OnClick="imgBtn_OnClick" />
+            </div>
+            
+            <div class="banner">
+            <img src="../Content/Images/cart_banner.png" width="311" height="245" />
             </div>
           
     

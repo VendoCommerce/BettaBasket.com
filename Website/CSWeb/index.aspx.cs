@@ -24,7 +24,7 @@ namespace CSWeb.Root.Store
             {
                 string GeoCoountry = "";
                 GeoCoountry = CommonHelper.GetGeoTargetLocation(CommonHelper.IpAddress(HttpContext.Current));
-                if (GeoCoountry.Equals("canada"))
+                if (GeoCoountry.Equals("canada") || GeoCoountry.Equals("ca"))
                 {
                     Response.Redirect("https://www.bettabasket.ca?" + Request.QueryString);
                 }

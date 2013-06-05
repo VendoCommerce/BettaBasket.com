@@ -232,6 +232,7 @@
     <Content Include="Content\Images\admin\upsell_green.jpg" />
     <Content Include="Content\Images\admin\upsell_laundrypole.jpg" />
     <Content Include="Content\Images\admin\yes_btn.png" />
+    <Content Include="Content\Images\admin_logo.png" />
     <Content Include="Content\Images\amexCard.gif" />
     <Content Include="Content\Images\asotv.jpg" />
     <Content Include="Content\Images\betta_comingsoon.jpg" />
@@ -239,6 +240,7 @@
     <Content Include="Content\Images\betta_logo.png" />
     <Content Include="Content\Images\bg.jpg" />
     <Content Include="Content\Images\bottom_cta.jpg" />
+    <Content Include="Content\Images\cart_banner.png" />
     <Content Include="Content\Images\cart_product_hooks.jpg" />
     <Content Include="Content\Images\cart_product_pic.jpg" />
     <Content Include="Content\Images\cart_product_pic.png" />
@@ -260,6 +262,7 @@
     <Content Include="Content\Images\how5.jpg" />
     <Content Include="Content\Images\how6.jpg" />
     <Content Include="Content\Images\how_1.jpg" />
+    <Content Include="Content\Images\icon_print.gif" />
     <Content Include="Content\Images\nothanks_btn.jpg" />
     <Content Include="Content\Images\nothanks_btn.png" />
     <Content Include="Content\Images\orange_bullet.png" />

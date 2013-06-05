@@ -1,13 +1,30 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CheckoutThankYouModule.ascx.cs" Inherits="CSWeb.UserControls.CheckoutThankYouModule" %>
-
+<script language="javascript">
+function Clickheretoprint()
+{ 
+  var disp_setting="toolbar=yes,location=no,directories=yes,menubar=yes,"; 
+      disp_setting+="scrollbars=yes,width=650, height=600, left=100, top=25"; 
+  var content_vlue = document.getElementById("receipt_content").innerHTML; 
+  
+  var docprint=window.open("","",disp_setting); 
+   docprint.document.open(); 
+   docprint.document.write('<html><head><title>Betta Basket Receipt</title>');
+   docprint.document.write('<link href="/styles/global_print.css" rel="stylesheet" type="text/css" media="all" />'); 
+   docprint.document.write('</head><body onLoad="self.print()">');          
+   docprint.document.write(content_vlue);          
+   docprint.document.write('</body></html>'); 
+   docprint.document.close(); 
+   docprint.focus(); 
+}
+</script>
 <div id="receipt_content" style="height: auto; width: 819px; position:relative; padding: 40px 0; margin: 0 auto;">
-    
-    <h2>Thank you for your order!</h2>
-<p>&nbsp;</p>
-		<asp:HyperLink ID="hlPrinterFriendly" NavigateUrl="/Receipt-Friendly" Visible="false" runat="server" CssClass="printer" Target="_blank">
-        	
-            </asp:HyperLink>
-        
+    <h1>Betta Basket Receipt</h1>
+    <div class="clearfix">
+    <h2 style="width: 400px; float:left; position:relative">Thank you for your order!</h2>
+
+	<a href="javascript:Clickheretoprint()" class="printer"><img src="../Content/Images/icon_print.gif" width="16" height="16" />&nbsp;Printer-Friendly</a>
+        </div>
+  
         <table width="819" border="0" cellspacing="0" cellpadding="0" id="receipt_table1">
 <tr><td colspan="4"><div class="horizontal_dots"></div></td></tr>
 
@@ -29,8 +46,8 @@
                         <ItemTemplate>
                             <tr>
                              <td valign="top" style="padding-bottom: 20px; padding-right: 20px;">
-                             
-                             <img src="<%# DataBinder.Eval(Container.DataItem, "ImagePath")%>" />
+                             <div class="itemprint">Item Image</div>
+                             <div class="itemimg"><img src="<%# DataBinder.Eval(Container.DataItem, "ImagePath")%>" /></div>
                              
                              </td>
                                 <td valign="top" style="padding-bottom: 20px">

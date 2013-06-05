@@ -1042,3 +1042,22 @@ margin-left: 12px;
 	top: 904px;
 	left: 611px;
 }
+
+.printer {
+	position:relative;
+	float:right;	
+	text-decoration: none;
+	color: #515151;
+}
+
+#receipt_content h1, .itemprint {
+	display: none;	
+}
+
+.banner {
+  margin-left: -35px;
+  margin-top: -40px;
+  position: relative;
+  width: 311px;
+  z-index: 1000;
+}

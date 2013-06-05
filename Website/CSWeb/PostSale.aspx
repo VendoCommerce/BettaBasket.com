@@ -37,7 +37,9 @@
     
 </div>
 
-    
+        <div class="footer">
+<p>Copyright &copy; <script>document.write(new Date().getFullYear())</script>. All rights reserved</p>
+</div>
 <uc:TrackingPixels ID="TrackingPixels" runat="server" />
     </form>
     <script type="text/javascript">
@@ -72,8 +74,6 @@
             //$("#<%= form1.ClientID %>").validationEngine('validate', { scroll: false });
         }
     </script>
-    <div class="footer">
-<p>Copyright &copy; <script>document.write(new Date().getFullYear())</script>. All rights reserved</p>
-</div>
+
 </body>
 </html>
