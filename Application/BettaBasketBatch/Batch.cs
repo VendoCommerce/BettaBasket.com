@@ -825,9 +825,9 @@ namespace Com.ConversionSystems
             MailMessage message = new MailMessage();
             message.To.Add(new MailAddress(Helper.AppSettings["AdminEmail"]));
             message.CC.Add(new MailAddress(Helper.AppSettings["MonitorEmail"]));
-            message.From = new MailAddress("info@ahhbra.com");
+            message.From = new MailAddress("info@bettabasket.com");
             
-                message.Subject = "Alert - AhhBra.com - Unable to process Orderid = "+Orderid;
+                message.Subject = "Alert - BettaBasket.com - Unable to process Orderid = "+Orderid;
                 sb.Append("Here is the response from Moulton. Please address this order:");
                 sb.Append(OMSResponse);            
 
