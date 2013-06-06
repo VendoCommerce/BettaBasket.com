@@ -30,7 +30,7 @@
 <p class="f18">Feel free to contact us at any time with any questions <br />
   or concerns.</p>
 <p class="bold f18">Telephone Customer Support: <span class="orange f24">1-877-892-0932</span></p>
-<p class="bold f18">Customer Service Email: <a href="mailto:info@tmgtv.com">info@tmgtv.com</a></p>
+<p class="bold f18">Customer Service Email: <a href="mailto:Bettabasket@tmgtv.com">Bettabasket@tmgtv.com</a></p>
 </div>
 <div class="right">
 
