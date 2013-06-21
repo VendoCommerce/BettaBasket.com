@@ -180,6 +180,7 @@
     <Content Include="Content\Flash\ctavideo.mp4" />
     <Content Include="Content\Flash\ctavideo_ca.mp4" />
     <Content Include="Content\Flash\homevideo.swf" />
+    <Content Include="Content\Images\add_btn.jpg" />
     <Content Include="Content\Images\admin\add.gif" />
     <Content Include="Content\Images\admin\amexCard.gif" />
     <Content Include="Content\Images\admin\calendar.gif" />
@@ -241,6 +242,7 @@
     <Content Include="Content\Images\bg.jpg" />
     <Content Include="Content\Images\bottom_cta.jpg" />
     <Content Include="Content\Images\cart_banner.png" />
+    <Content Include="Content\Images\cart_cta.png" />
     <Content Include="Content\Images\cart_product_hooks.jpg" />
     <Content Include="Content\Images\cart_product_pic.jpg" />
     <Content Include="Content\Images\cart_product_pic.png" />
@@ -1051,6 +1053,12 @@
     </Compile>
     <Compile Include="UserControls\TrackingPixels.ascx.designer.cs">
       <DependentUpon>TrackingPixels.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\VerticalPane.ascx.cs">
+      <DependentUpon>VerticalPane.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\VerticalPane.ascx.designer.cs">
+      <DependentUpon>VerticalPane.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

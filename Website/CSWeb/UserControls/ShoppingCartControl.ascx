@@ -76,5 +76,5 @@
     </asp:PlaceHolder>
 </asp:Panel>
    <div class="cart_offer">
-   
+   <img src="/Content/Images/cart_cta.png" width="589" height="311" />
            </div>

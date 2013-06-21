@@ -190,7 +190,7 @@
                     OnClick="imgBtn_OnClick" />
             </div>
             
-            <div class="banner">
+            <div class="banner" style="display: none">
             <img src="../Content/Images/cart_banner.png" width="311" height="245" />
             </div>
           

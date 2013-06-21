@@ -611,26 +611,28 @@ margin-left: 12px;
 }
 
 .cart_left {
-	position:relative;
-	width: 505px;
-	color: #767676;
-	font-size: 15px;
-	float:left;
-	padding-top: 10px;
+  color: #767676;
+  float: left;
+  font-size: 15px;
+  padding-top: 10px;
+  position: relative;
+  width: 520px;
 }
 
 .cart_right {
-	position:relative;
-	width: 290px;
-	float:left;
+  float: left;
+  position: relative;
+  width: 280px;
 }
 
 .cart_offer {
-	font-size: 11px;
-	line-height: 16px;
-	padding-top: 20px;	
+  font-size: 11px;
+  line-height: 16px;
+  margin-left: -20px;
+  padding-top: 20px;
+  position: relative;
+  z-index: 10000;
 }
-
 .horizontal_dots {
 	height: 1px;
 	margin: 10px 0;
