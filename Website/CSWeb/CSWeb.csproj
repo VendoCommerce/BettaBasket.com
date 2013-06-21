@@ -180,6 +180,7 @@
     <Content Include="Content\Flash\ctavideo.mp4" />
     <Content Include="Content\Flash\ctavideo_ca.mp4" />
     <Content Include="Content\Flash\homevideo.swf" />
+    <Content Include="Content\Images\2baskets.jpg" />
     <Content Include="Content\Images\add_btn.jpg" />
     <Content Include="Content\Images\admin\add.gif" />
     <Content Include="Content\Images\admin\amexCard.gif" />
