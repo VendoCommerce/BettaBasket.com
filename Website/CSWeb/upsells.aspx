@@ -8,6 +8,7 @@
 <title>Betta Basket - Upsells Samples</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <meta name="description" content="Show Off Your New Green Thumb - with Betta Basket! Growing healthy flowers and plants is now easier than ever!">
+<meta name="robots" content="noindex, nofollow">
 <meta name="keywords" content="betta basket, gardening, green thumb, air streaming, flowers, plants, hanging baskets" />
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -69,14 +70,14 @@
 <div class="upsell" style="background: url(content/images/upsell_multiple.jpg) right 20px no-repeat">
 
 <div style="width: 570px">
-<h2>There's no limit to what you can do!  </h2>
-<p>With additional Betta Baskets, you can truly <strong>create an amazing outdoor space</strong>. Imagine beautiful green plant displays hanging throughout your yard, patio, or balcony! Get additional Betta Baskets for just $19.99 and you'll also receive <strong>free shipping!</strong></p>
+<h2>Imagine the possibilities!  </h2>
+<p>With <strong>even more Betta Baskets</strong> you can create an amazing outdoor space.  Imagine beautiful green plants and flower displays hanging throughout your yard, patio or balcony!  Get additional Betta Baskets for just $19.99 each and <strong>we'll pay the shipping!</strong></p>
 <ul>
-  <li><strong>Grow herbs and tomatoes with your second basket!</strong></li>
-  <li><strong>Pair your 2 Betta Baskets for a stunning display!</strong></li>
+  <li><strong>Experience lush greenery with simple upkeep anywhere you'd like!</strong></li>
+  <li><strong>Grow a potted garden with a basket for each type of vegetable and herb!</strong></li>
   <li><strong>Offer only good if you act now!</strong></li>
 </ul>
-<p class="ask">Would you like to get additional Betta Baskets with FREE SHIPPING? How many? 
+<p class="ask">How many additional Betta Baskets with FREE SHIPPING would you like? 
 
   <select name="select" id="select">
   <option>1</option>
@@ -84,7 +85,7 @@
 </p>
   <p class="upsell_btns">
   <a href=""><img src="Content/Images/nothanks_btn.jpg" width="119" height="68" /></a>
-  <a href=""><img src="Content/Images/yes_btn.jpg" width="119" height="68" /></a>&nbsp;<span class="arrow"><img src="Content/Images/upsell_arrow.png" width="67" height="75" /></span>
+  <a href=""><img src="Content/Images/add_btn.jpg" width="119" height="68" /></a>&nbsp;<span class="arrow"><img src="Content/Images/upsell_arrow.png" width="67" height="75" /></span>
   </p>
 </div>
 </div>
