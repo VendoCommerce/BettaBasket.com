@@ -11,7 +11,7 @@
     <table width="100%" cellpadding="2" cellspacing="1" border="0">
         <tr>
             <td width="50%">
-                <asp:Image AlternateText="Add" ID="imgAddItem" runat="server" ImageUrl='/Content/images/admin/add.gif'
+                <asp:Image AlternateText="Add" ID="imgAddItem" runat="server" ImageUrl='//d10yufw89ry03z.cloudfront.net/images/admin/add.gif'
                     BorderStyle="None"></asp:Image>
                 <asp:LinkButton ID="lbItemAdd" runat="server" CssClass="link" OnCommand="btnAction_Command"
                     CommandName="AddNew" Text="Add Version Category"></asp:LinkButton>
@@ -44,10 +44,10 @@
 
                     <td nowrap align="center" width="10%">
                         <asp:LinkButton ID="lbSave" runat="server" CausesValidation="False" CommandName="Edit">
-                            <asp:Image ID="Image1" runat="server" ImageUrl="/Content/images/admin/edit.gif" BorderWidth="0"
+                            <asp:Image ID="Image1" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/edit.gif" BorderWidth="0"
                                 ToolTip='Edit' /></asp:LinkButton>
                         <asp:LinkButton ID="lbRemove" runat="server" CausesValidation="False" CommandName="Delete">
-                            <asp:Image ID="Image2" runat="server" ImageUrl="/Content/images/admin/delete.gif" BorderWidth="0"
+                            <asp:Image ID="Image2" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/delete.gif" BorderWidth="0"
                                 ToolTip='Delete' /></asp:LinkButton>
                     </td>
                 </tr>
@@ -63,10 +63,10 @@
 
                     <td align="center">
                         <asp:LinkButton ID="lbSave" runat="server" CausesValidation="True" CommandName="Update">
-                            <asp:Image ID="Image1" runat="server" ImageUrl="/Content/images/admin/save.gif" BorderWidth="0"
+                            <asp:Image ID="Image1" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/save.gif" BorderWidth="0"
                                 ToolTip='Save' /></asp:LinkButton>
                         <asp:LinkButton ID="lbCancel" runat="server" CausesValidation="False" CommandName="Cancel">
-                            <asp:Image ID="Image3" runat="server" ImageUrl="/Content/images/admin/cancel.gif" BorderWidth="0"
+                            <asp:Image ID="Image3" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/cancel.gif" BorderWidth="0"
                                 ToolTip='Cancel' /></asp:LinkButton>
                     </td>
                 </tr>
@@ -83,11 +83,11 @@
                 <td nowrap align="center" width="10%">
                     <asp:LinkButton ID="lbSave" runat="server" CommandName="Add" OnCommand="btnAction_Command"
                         CausesValidation="True">
-                        <asp:Image ID="Image1" runat="server" ImageUrl="/Content/images/admin/save.gif" BorderWidth="0"
+                        <asp:Image ID="Image1" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/save.gif" BorderWidth="0"
                             ToolTip='Save' /></asp:LinkButton>
                     <asp:LinkButton ID="lbCancel" runat="server" CommandName="Cancel" OnCommand="btnAction_Command"
                         CausesValidation="False">
-                        <asp:Image ID="Image3" runat="server" ImageUrl="/Content/images/admin/cancel.gif" BorderWidth="0"
+                        <asp:Image ID="Image3" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/cancel.gif" BorderWidth="0"
                             ToolTip='Cancel' /></asp:LinkButton>
                 </td>
             </tr>

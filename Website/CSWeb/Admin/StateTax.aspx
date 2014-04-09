@@ -51,7 +51,7 @@
     <table width="100%" cellpadding="2" cellspacing="1" border="0">
         <tr>
             <td width="50%">
-                <asp:Image AlternateText="Add" ID="imgAddItem" runat="server" ImageUrl='/Content/images/admin/add.gif'
+                <asp:Image AlternateText="Add" ID="imgAddItem" runat="server" ImageUrl='//d10yufw89ry03z.cloudfront.net/images/admin/add.gif'
                     BorderStyle="None"></asp:Image>
                 <asp:LinkButton ID="lbItemAdd" runat="server" CssClass="link" Text="Add State"></asp:LinkButton>
             </td>

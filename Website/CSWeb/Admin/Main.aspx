@@ -28,7 +28,7 @@
                     <table>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="SitePrefItem.aspx">Site Preferences</a><br>
@@ -38,7 +38,7 @@
                         </tr>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="VersionList.aspx">Version</a><br>
@@ -48,7 +48,7 @@
                         </tr>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="categoryList.aspx">Category</a><br>
@@ -58,7 +58,7 @@
                         </tr>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="SKUList.aspx">SKUs</a><br>
@@ -68,7 +68,7 @@
                         </tr>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="Shipping.aspx">Site Shipping</a><br>
@@ -78,7 +78,7 @@
                         </tr>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="CountryList.aspx">Country</a><br>
@@ -88,7 +88,7 @@
                         </tr>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="TaxList.aspx">Tax</a><br>
@@ -98,7 +98,7 @@
                         </tr>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="PathList.aspx">Post Sale</a><br>
@@ -108,7 +108,7 @@
                         </tr>
                          <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="CouponList.aspx">Coupons</a><br>
@@ -118,7 +118,7 @@
                         </tr>
                          <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="EmailList.aspx">Email Management</a><br>
@@ -128,7 +128,7 @@
                         </tr>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="PaymentProviderList.aspx">Payment Provider</a><br>
@@ -138,7 +138,7 @@
                         </tr>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="FulfillmentHouseProviderList.aspx">Fulfillment House</a><br>
@@ -148,7 +148,7 @@
                         </tr>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="ErrorLog.aspx">Error Log</a><br>
@@ -158,7 +158,7 @@
                         </tr>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="ResourceList.aspx">Resource</a><br>
@@ -168,7 +168,7 @@
                         </tr>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="Attributes.aspx">Attributes Management</a><br>
@@ -182,7 +182,7 @@
                     <table>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="customerList.aspx">Customer</a><br>
@@ -192,7 +192,7 @@
                         </tr>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="users.aspx">Administrators</a><br>
@@ -206,7 +206,7 @@
                     <table>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="OrderList.aspx">Orders</a><br>
@@ -216,7 +216,7 @@
                         </tr>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="CustomFieldList.aspx">Custom Fields</a><br>
@@ -226,7 +226,7 @@
                         </tr>
                         <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="customerorders.aspx">CustomerOrders</a><br>
@@ -236,7 +236,7 @@
                         </tr>
                           <tr>
                             <td valign="top" align="right" width="1%">
-                                <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                                <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                             </td>
                             <td valign="top" width="100%" width="49%">
                                 <a class="link" href="Reports.aspx">Client Custom Reports</a><br>
@@ -251,7 +251,7 @@
                 <table>
                     <tr>
                         <td valign="top" align="right" width="1%">
-                            <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                            <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                         </td>
                         <td valign="top" width="100%" width="49%">
                             <a class="link" href="VersionReport.aspx">Version Report</a><br>
@@ -261,7 +261,7 @@
                     </tr>
                     <tr>
                         <td valign="top" align="right" width="1%">
-                            <img hspace="0" src="/Content/images/admin/rect.gif" vspace="2" border="0"><br>
+                            <img hspace="0" src="//d10yufw89ry03z.cloudfront.net/images/admin/rect.gif" vspace="2" border="0"><br>
                         </td>
                         <td valign="top" width="100%" width="49%">
                             <a class="link" href="Reports.aspx">Order Summary Report</a><br>

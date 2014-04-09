@@ -26,7 +26,7 @@
 
 <div class="container">
 <uc:Header runat="server" />
-<div class="home_left"><img src="Content/Images/home_leftside.png" width="622" height="898" usemap="#Mapleft" style="margin-left: -26px; display: block;" />
+<div class="home_left"><img src="//d10yufw89ry03z.cloudfront.net/images/home_leftside.png" width="622" height="898" usemap="#Mapleft" style="margin-left: -26px; display: block;" />
   <map name="Mapleft">
     <area shape="rect" coords="7,464,564,530" href="#mbg" class="mbg">
   </map>
@@ -64,10 +64,10 @@ and 4 on top</li>
 <script type='text/javascript'>
   jwplayer('ctavideo').setup({
     flashplayer: '/Scripts/jwplayer/player.swf',
-	file: '/content/flash/ctavideo.mp4',
+	file: 'https://d10yufw89ry03z.cloudfront.net/flash/ctavideo.mp4',
 	autostart: true,    
 	controlbar: 'bottom',
-	image: '/content/images/videostop.jpg',
+	image: '//d10yufw89ry03z.cloudfront.net/images/videostop.jpg',
     width: 298,
     height: 188,
 	stretching: 'exactfit',
@@ -79,7 +79,7 @@ and 4 on top</li>
 </div>
 <div class="clear"></div>
 <div class="home_bottom">
-<img src="Content/Images/home_bottom.jpg" width="904" height="1350" style="display: block;" />
+<img src="//d10yufw89ry03z.cloudfront.net/images/home_bottom.jpg" width="904" height="1350" style="display: block;" />
 <div class="homeb1">Bring in the beauty of flowers and herbs in wonderful displays of color to your home and garden. Not only is Betta Basket easy to plant, but flowers thrive when they are planted in Betta Basket. 
 Try a whole new world of plant possibilities in your Betta Basket! </div>
 <div class="homeb2"><strong>Tomatoes</strong><br>

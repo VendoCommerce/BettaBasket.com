@@ -11,8 +11,8 @@
 	<asp:Label ID="lblResults" runat="server" CssClass="FieldValue" Font-Italic="true" Visible="false"></asp:Label>
 	<asp:PlaceHolder runat="server" id='holderHideOnOnePage'>
 		<asp:PlaceHolder runat="server" ID="holderPrewLinks">
-			<asp:ImageButton ID="firstPageLink" CausesValidation='<%# CausesValidation %>' CommandName="Firts" runat="server" CssClass="pagerNavigationLink" OnClick="OnNavigationClick" ImageUrl="/Content/images/move_frst.gif" ImageAlign="AbsMiddle" ToolTip="First" />
-			<asp:ImageButton ID="previousPageLink" CausesValidation='<%# CausesValidation %>' CommandName="Previous" runat="server" CssClass="pagerNavigationLink" OnClick="OnNavigationClick" ImageUrl="/Content/images/move_lt.gif" ImageAlign="AbsMiddle" ToolTip="Previous" />
+			<asp:ImageButton ID="firstPageLink" CausesValidation='<%# CausesValidation %>' CommandName="Firts" runat="server" CssClass="pagerNavigationLink" OnClick="OnNavigationClick" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/move_frst.gif" ImageAlign="AbsMiddle" ToolTip="First" />
+			<asp:ImageButton ID="previousPageLink" CausesValidation='<%# CausesValidation %>' CommandName="Previous" runat="server" CssClass="pagerNavigationLink" OnClick="OnNavigationClick" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/move_lt.gif" ImageAlign="AbsMiddle" ToolTip="Previous" />
 		</asp:PlaceHolder>
 		<asp:Repeater ID="pagingLinksRepeater" runat="server" OnItemDataBound="pagingLinksRepeater_OnItemDataBound" OnItemCommand="pagingLinksRepeater_OnItemCommand">
 			<ItemTemplate>
@@ -21,8 +21,8 @@
 			</ItemTemplate>
 		</asp:Repeater>
 		<asp:PlaceHolder runat="server" ID="holderNextLinks">
-			<asp:ImageButton ID="nextPageLink" CausesValidation='<%# CausesValidation %>' CommandName="Next" runat="server" OnClick="OnNavigationClick" CssClass="pagerNavigationLink" ImageUrl="/Content/images/move_rt.gif" ImageAlign="AbsMiddle" ToolTip="Next" />
-			<asp:ImageButton ID="lastPageLink" CausesValidation='<%# CausesValidation %>' CommandName="Last" runat="server" OnClick="OnNavigationClick" CssClass="pagerNavigationLink" ImageUrl="/Content/images/move_lst.gif" ImageAlign="AbsMiddle" ToolTip="Last" />
+			<asp:ImageButton ID="nextPageLink" CausesValidation='<%# CausesValidation %>' CommandName="Next" runat="server" OnClick="OnNavigationClick" CssClass="pagerNavigationLink" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/move_rt.gif" ImageAlign="AbsMiddle" ToolTip="Next" />
+			<asp:ImageButton ID="lastPageLink" CausesValidation='<%# CausesValidation %>' CommandName="Last" runat="server" OnClick="OnNavigationClick" CssClass="pagerNavigationLink" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/move_lst.gif" ImageAlign="AbsMiddle" ToolTip="Last" />
 		</asp:PlaceHolder>
 	</asp:PlaceHolder>
 </asp:PlaceHolder>

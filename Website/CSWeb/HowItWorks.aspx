@@ -28,25 +28,25 @@
 <h2>Betta Basket: Breakthough design for great-looking 
   flower displays! </h2>
   <div style="display: inline-block;">
-<p style="color: #000"><img src="Content/Images/how_1.jpg" width="328" height="199" class="fright" />Betta Basket brings you more opportunities than ever to create and sustain your basket arrangements. The breakthrough design allows your plants to receive more nutrients, access to water, and unprecedented airflow that supercharges growth and looks great! <strong><a href="mailto:info@tmgtv.com"></a></strong></p>
+<p style="color: #000"><img src="//d10yufw89ry03z.cloudfront.net/images/how_1.jpg" width="328" height="199" class="fright" />Betta Basket brings you more opportunities than ever to create and sustain your basket arrangements. The breakthrough design allows your plants to receive more nutrients, access to water, and unprecedented airflow that supercharges growth and looks great! <strong><a href="mailto:info@tmgtv.com"></a></strong></p>
 </div>
   <h2 style="color: #555; font-size: 20px;">They'll wonder how you did it... but it's easy <br>
     with Betta Basket!</h2>
-    <div class="how"><img src="Content/Images/how2.jpg" />
+    <div class="how"><img src="//d10yufw89ry03z.cloudfront.net/images/how2.jpg" />
 <p class="f15">You won't believe how quickly you'll finish your first amazing Betta Basket. Just put a little soil in the bottom of the basket for a base. This will be where the <strong>Wellspring Water Trough</strong> stores water to provide continuous moisture to your plants especially during hot, dry periods!</p>
 </div>
 
-   <div class="how"><img src="Content/Images/how3.jpg" />
+   <div class="how"><img src="//d10yufw89ry03z.cloudfront.net/images/how3.jpg" />
 <p class="f15">Next, simply place a few of your plants in  and throughout your Betta Basket. <strong>Twelve removable side panels show you where to put plants</strong>.  Plant from the outside in to avoid crushing the leaves. All the roots are centrally located so they get all the water they need!</p>
 </div>
-   <div class="how"><img src="Content/Images/how4.jpg" />
+   <div class="how"><img src="//d10yufw89ry03z.cloudfront.net/images/how4.jpg" />
 <p class="f15"><strong>Just snap in the Aeration Panels</strong> to hold in the soil and maintain the airflow that will help supercharge your plants. Place a little more soil in the basket, and complete the top of your basket with plants of 
   your choice!</p>
   </div>
-     <div class="how"><img src="Content/Images/how5.jpg" />
+     <div class="how"><img src="//d10yufw89ry03z.cloudfront.net/images/how5.jpg" />
 <p class="f15">That's it! In just minutes, you've created a beautiful full hanging basket for your plants, herbs, tomatoes, even succulents or flowers! Betta Basket give you the freedom to choose which plants you'll use to create an amazing hanging garden! It is easy to hang with a four-piece galvanized steel chain which helps the basket hang evenly.</p>   
 </div>
-   <div class="how"><img src="Content/Images/how6.jpg" />
+   <div class="how"><img src="//d10yufw89ry03z.cloudfront.net/images/how6.jpg" />
 <p class="f15">Simply water your Betta Basket, and let the breakthrough design do its work! With constant airflow, a steady water supply, and access to nutrients, you''ll love how quickly <strong>your plants grow healthy, full, and vibrant!</strong></p>
 </div>
 <p class="f16 bold">Don't wait &ndash; get your Betta Basket now before this offer runs out!<br>

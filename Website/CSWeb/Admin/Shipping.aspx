@@ -51,7 +51,7 @@
     <table width="100%" cellpadding="2" cellspacing="1" border="0">
         <tr>
             <td width="50%">
-                <asp:Image AlternateText="Add" ID="Image5" runat="server" ImageUrl='/Content/images/admin/add.gif'
+                <asp:Image AlternateText="Add" ID="Image5" runat="server" ImageUrl='//d10yufw89ry03z.cloudfront.net/images/admin/add.gif'
                     BorderStyle="None"></asp:Image>
                 <asp:HyperLink ID="HyperLink2" runat="server" CssClass="link" NavigateUrl="CustomShippingList.aspx"
                     Text="View CustomShipping"></asp:HyperLink>&nbsp;&nbsp;
@@ -89,7 +89,7 @@
             <td>
                 <asp:Panel ID="pnlOrderVal" runat="Server" Visible="False">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Image
-                        AlternateText="Add" ID="Image1" runat="server" ImageUrl='/Content/images/admin/add.gif'
+                        AlternateText="Add" ID="Image1" runat="server" ImageUrl='//d10yufw89ry03z.cloudfront.net/images/admin/add.gif'
                         BorderStyle="None"></asp:Image>
                     <asp:LinkButton ID="lbItemAdd" runat="server" CssClass="link" OnCommand="btnAction_Command"
                         CommandName="AddOrderVal" Text="Add New Item"></asp:LinkButton>
@@ -150,7 +150,7 @@
             <td>
                 <asp:Panel ID="pnlWeight" runat="Server" Visible="False">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Image
-                        AlternateText="Add" ID="imgAddItem" runat="server" ImageUrl='/Content/images/admin/add.gif'
+                        AlternateText="Add" ID="imgAddItem" runat="server" ImageUrl='//d10yufw89ry03z.cloudfront.net/images/admin/add.gif'
                         BorderStyle="None"></asp:Image>
                     <asp:LinkButton ID="LinkButton1" runat="server" CssClass="link" OnCommand="btnAction_Command"
                         CommandName="OrderWeight" Text="Add New Item"></asp:LinkButton>
@@ -302,7 +302,7 @@
                     <td>
                         <asp:Panel ID="pnlRushOrderTotal" runat="Server" Visible="False">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Image
-                                AlternateText="Add" ID="Image2" runat="server" ImageUrl='/Content/images/admin/add.gif'
+                                AlternateText="Add" ID="Image2" runat="server" ImageUrl='//d10yufw89ry03z.cloudfront.net/images/admin/add.gif'
                                 BorderStyle="None"></asp:Image>
                             <asp:LinkButton ID="lbRushItemAdd" runat="server" CssClass="link" OnCommand="btnRushAction_Command"
                                 CommandName="AddRushOrderVal" Text="Add New Item"></asp:LinkButton>
@@ -363,7 +363,7 @@
                     <td>
                         <asp:Panel ID="pnlRushOrderweight" runat="Server" Visible="False">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Image
-                                AlternateText="Add" ID="Image3" runat="server" ImageUrl='/Content/images/admin/add.gif'
+                                AlternateText="Add" ID="Image3" runat="server" ImageUrl='//d10yufw89ry03z.cloudfront.net/images/admin/add.gif'
                                 BorderStyle="None"></asp:Image>
                             <asp:LinkButton ID="lbRushWeightItemAdd" runat="server" CssClass="link" OnCommand="btnRushAction_Command"
                                 CommandName="RushOrderWeight" Text="Add New Item"></asp:LinkButton>
@@ -498,7 +498,7 @@
                 </tr>
                 <tr>                    
                     <td>                
-                        <img src="/Content/images/admin/add.gif" />
+                        <img src="//d10yufw89ry03z.cloudfront.net/images/admin/add.gif" />
                         <asp:LinkButton ID="lbAddShippingCharge" runat="server" CssClass="link" OnCommand="lbAddShippingCharge_Command"
                             CommandName="AddShippingCharge" Text="Add New Shipping Charge"></asp:LinkButton>        
                         <asp:Repeater ID="rptShippingCharges" runat="server">

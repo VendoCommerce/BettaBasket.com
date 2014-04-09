@@ -11,7 +11,7 @@
     <table width="100%" cellpadding="2" cellspacing="1" border="0">
         <tr>
             <td width="50%">
-                <asp:Image AlternateText="Add" ID="imgAddItem" runat="server" ImageUrl='/Content/images/admin/add.gif'
+                <asp:Image AlternateText="Add" ID="imgAddItem" runat="server" ImageUrl='//d10yufw89ry03z.cloudfront.net/images/admin/add.gif'
                     BorderStyle="None"></asp:Image>
                 <asp:HyperLink ID="hlItem" runat="server" CssClass="link" NavigateUrl="CouponItem.aspx"
                     Text="Add Promotion"></asp:HyperLink>
@@ -65,10 +65,10 @@
                     </td>
                     <td nowrap align="center" width="5%">
                         <asp:HyperLink ID="hlEditLink" runat="server" CausesValidation="False" CommandName="Edit"
-                            ImageUrl="/Content/images/admin/edit.gif">
+                            ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/edit.gif">
                         </asp:HyperLink>
                         <asp:LinkButton ID="lbRemove" runat="server" CausesValidation="False" CommandName="Delete">
-                            <asp:Image ID="Image2" runat="server" ImageUrl="/Content/images/admin/delete.gif"
+                            <asp:Image ID="Image2" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/delete.gif"
                                 BorderWidth="0" ToolTip='Delete' /></asp:LinkButton>
                     </td>
                 </tr>

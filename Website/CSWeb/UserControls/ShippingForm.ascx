@@ -2,7 +2,7 @@
    <script type="text/javascript" src="/Scripts/autoTab.js"></script>
 <a id="tryitnow" name="tryitnow"></a>
 <div class="cartA">
-<img src="../Content/Images/form_top.jpg" width="298" height="126" />
+<img src="//d10yufw89ry03z.cloudfront.net/images/form_top.jpg" width="298" height="126" />
   <div class="form_line clearfix">
         <div class="error-1">
             <asp:Label ID="lblCountryError" runat="server" Visible="false"></asp:Label></div>
@@ -108,14 +108,14 @@
    
  
    <div class="form_line_btn">
-        <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="../content/images/order_now_btn.png"
+        <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/order_now_btn.png"
             OnClick="imgBtn_OnClick" />
 </div>
    <div class="form_line_guarantee">
         <a href="#mbg" class="mbg">30-Day Money-Back Guarantee!</a>
 </div>
  <div class="form_line_btn">
- <img src="../Content/Images/ssl.png" />
+ <img src="//d10yufw89ry03z.cloudfront.net/images/ssl.png" />
  </div>
 
 </div>

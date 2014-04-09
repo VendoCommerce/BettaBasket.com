@@ -3,7 +3,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:TextBox ID="textboxDate" runat="server" CssClass="text" MaxLength="10"
     Columns="12" autocomplete="off" Style="border: 1px solid #567890; width: 75px; float:left;" />
-    &nbsp; <asp:Image runat="server" ID="calendericon" ToolTip="Calendar" ImageUrl="/Content/Images/admin/calendar.gif" />
+    &nbsp; <asp:Image runat="server" ID="calendericon" ToolTip="Calendar" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/calendar.gif" />
 <ajaxToolkit:CalendarExtender ID="calendarExtenderDate" runat="server" TargetControlID="textboxDate"
     PopupButtonID="textboxDate" />
 <asp:RequiredFieldValidator runat="server" Enabled="false" ControlToValidate="textboxDate"

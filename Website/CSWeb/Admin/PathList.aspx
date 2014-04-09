@@ -21,17 +21,17 @@
     <table width="100%" cellpadding="2" cellspacing="1" border="0">
         <tr>
             <td width="50%">
-                <asp:Image AlternateText="Add" ID="imgAddItem" runat="server" ImageUrl='/Content/images/admin/add.gif'
+                <asp:Image AlternateText="Add" ID="imgAddItem" runat="server" ImageUrl='//d10yufw89ry03z.cloudfront.net/images/admin/add.gif'
                     BorderStyle="None"></asp:Image>
                 <asp:HyperLink ID="lbItemAdd" runat="server" CssClass="link" NavigateUrl="PathItem.aspx"
                     Text="Add Path"></asp:HyperLink>&nbsp;&nbsp;
 
-                     <asp:Image AlternateText="Add" ID="Image3" runat="server" ImageUrl='/Content/images/admin/add.gif'
+                     <asp:Image AlternateText="Add" ID="Image3" runat="server" ImageUrl='//d10yufw89ry03z.cloudfront.net/images/admin/add.gif'
                     BorderStyle="None"></asp:Image>
                 <asp:HyperLink ID="HyperLink1" runat="server" CssClass="link" NavigateUrl="TemplateList.aspx"
                     Text="View Templates"></asp:HyperLink>&nbsp;&nbsp;
 
-                    <asp:Image AlternateText="Add" ID="Image4" runat="server" ImageUrl='/Content/images/admin/add.gif'
+                    <asp:Image AlternateText="Add" ID="Image4" runat="server" ImageUrl='//d10yufw89ry03z.cloudfront.net/images/admin/add.gif'
                     BorderStyle="None"></asp:Image>Select Version:                 
                  
                  &nbsp;&nbsp;<asp:DropDownList ID="ddlVersion" runat="server" AutoPostBack="true"
@@ -85,10 +85,10 @@
                     </td>
                     <td nowrap align="center" width="20%">
                         <asp:LinkButton ID="lbSave" runat="server" CausesValidation="True" CommandName="Edit">
-                            <asp:Image ID="Image1" runat="server" ImageUrl="/Content/images/admin/edit.gif" BorderWidth="0"
+                            <asp:Image ID="Image1" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/edit.gif" BorderWidth="0"
                                 ToolTip='Edit' /></asp:LinkButton>
                         <asp:LinkButton ID="lbCancel" runat="server" CausesValidation="False" CommandName="Delete" OnClientClick="return confirm('Are you sure your want to delete this Path?')">
-                            <asp:Image ID="Image2" runat="server" ImageUrl="/Content/images/admin/delete.gif" BorderWidth="0"
+                            <asp:Image ID="Image2" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/delete.gif" BorderWidth="0"
                                 ToolTip='Delete' /></asp:LinkButton>
                     </td>
                 </tr>

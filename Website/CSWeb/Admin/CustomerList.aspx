@@ -55,9 +55,9 @@
         <tr>
             <td align="right" colspan="3">
                 <asp:HyperLink ID="hlprint" Text="Print" runat="Server" NavigateUrl="javascript:PrintpopUp('CustomerPrint.aspx?print=1', 550,500)">
-                    <img title="Print" src='/Content/images/admin/icon_print.gif' alt="Print" border="0" />Print</asp:HyperLink>&#160;
+                    <img title="Print" src='//d10yufw89ry03z.cloudfront.net/images/admin/icon_print.gif' alt="Print" border="0" />Print</asp:HyperLink>&#160;
                 <asp:HyperLink ID="hlexport" Text="Export to Excel" runat="Server" NavigateUrl="javascript:PrintpopUp('CustomerPrint.aspx?print=2', 550,500)">
-                <img title="Export to Excel" src='/Content/images/admin/icon_excel.gif' alt="Export to Excel" border="0" />Excel</asp:HyperLink>
+                <img title="Export to Excel" src='//d10yufw89ry03z.cloudfront.net/images/admin/icon_excel.gif' alt="Export to Excel" border="0" />Excel</asp:HyperLink>
             </td>
         </tr>
         <tr>

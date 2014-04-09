@@ -54,7 +54,7 @@
         <table width="100%" border="0" cellspacing="1" cellpadding="2" border="2">
         <tr>
         <td align="left">
-       <asp:Image AlternateText="Add" ID="Image1" runat="server" ImageUrl="/Content/images/admin/add.gif"
+       <asp:Image AlternateText="Add" ID="Image1" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/add.gif"
                     BorderStyle="None"></asp:Image>
                 <asp:HyperLink ID="hlAddUser" runat="server" CssClass="link" NavigateURL="UserEdit.aspx"
                      Text="Create NewUser"></asp:HyperLink>
@@ -95,8 +95,8 @@
                 </td>
                 <td>
                      <asp:HyperLink ID="hlEditCust" runat="server"  CausesValidation="False"
-                            ImageURL="/Content/images/admin/edit.gif" NavigateURL='<%# "UserEdit.aspx?CustId=" + DataBinder.Eval(Container.DataItem, "CustomerId") %>' /></asp:HyperLink>
-                      <asp:Image ID="lbMsg" runat="server" ToolTip='<%# DataBinder.Eval(Container.DataItem, "Password") %>' ImageUrl="/Content/images/admin/view_detail.gif"/>
+                            ImageURL="//d10yufw89ry03z.cloudfront.net/images/admin/edit.gif" NavigateURL='<%# "UserEdit.aspx?CustId=" + DataBinder.Eval(Container.DataItem, "CustomerId") %>' /></asp:HyperLink>
+                      <asp:Image ID="lbMsg" runat="server" ToolTip='<%# DataBinder.Eval(Container.DataItem, "Password") %>' ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/view_detail.gif"/>
              
                 </td>
             </tr>

@@ -61,7 +61,7 @@ padding: 9px 0 3px 0;
         #container
         {
             float: left;
-            background: #e7e7e7 url(/Content/images/admin/rep_bg2.jpg) no-repeat 176px 158px;
+            background: #e7e7e7 url(//d10yufw89ry03z.cloudfront.net/images/admin/rep_bg2.jpg) no-repeat 176px 158px;
             border: 15px #ccc solid;
             border-top: none;
             position: relative;
@@ -74,7 +74,7 @@ padding: 9px 0 3px 0;
         }
         #header
         {
-            background: url(/Content/Images/admin/rep_mainhd2.jpg) no-repeat;
+            background: url(//d10yufw89ry03z.cloudfront.net/images/admin/rep_mainhd2.jpg) no-repeat;
             width: 921px;
             height: 125px;
         }
@@ -88,31 +88,31 @@ padding: 9px 0 3px 0;
         }
         #hd_client
         {
-            background: url(/Content/images/admin/rep_hdclient.jpg) no-repeat;
+            background: url(//d10yufw89ry03z.cloudfront.net/images/admin/rep_hdclient.jpg) no-repeat;
         }
         #hd_resource
         {
-            background: url(/Content/images/admin/rep_hdresource.jpg) no-repeat;
+            background: url(//d10yufw89ry03z.cloudfront.net/images/admin/rep_hdresource.jpg) no-repeat;
         }
         #hd_activity
         {
-            background: url(/Content/images/admin/rep_hdactivity.jpg) no-repeat;
+            background: url(//d10yufw89ry03z.cloudfront.net/images/admin/rep_hdactivity.jpg) no-repeat;
         }
         #hd_summary
         {
-            background: url(/Content/images/admin/rep_hdsummary.jpg) no-repeat;
+            background: url(//d10yufw89ry03z.cloudfront.net/images/admin/rep_hdsummary.jpg) no-repeat;
         }
         #hd_wksummary
         {
-            background: url(/Content/images/admin/rep_hdwksummary.jpg) no-repeat;
+            background: url(//d10yufw89ry03z.cloudfront.net/images/admin/rep_hdwksummary.jpg) no-repeat;
         }
         #hd_mosummary
         {
-            background: url(/Content/images/admin/rep_hdmosummary.jpg) no-repeat;
+            background: url(//d10yufw89ry03z.cloudfront.net/images/admin/rep_hdmosummary.jpg) no-repeat;
         }
         .hd_items_sold
         {
-            background: url(/Content/images/admin/rep_hdtopitems.jpg) no-repeat;
+            background: url(//d10yufw89ry03z.cloudfront.net/images/admin/rep_hdtopitems.jpg) no-repeat;
             width: 306px;
             height: 20px;
         }
@@ -384,8 +384,8 @@ padding: 9px 0 3px 0;
                     <h2 id="hd_resource" class="text_replace">
                         Select Resource</h2>
                     <div class="content">
-                        <img src="/Content/images/rep_lnkreports.jpg" width="144" height="29" alt="Reports" />
-                        <img src="/Content/images/rep_lnkorders.jpg" width="144" height="29" alt="Orders" />
+                        <img src="//d10yufw89ry03z.cloudfront.net/images/rep_lnkreports.jpg" width="144" height="29" alt="Reports" />
+                        <img src="//d10yufw89ry03z.cloudfront.net/images/rep_lnkorders.jpg" width="144" height="29" alt="Orders" />
                     </div>
                 </div>
                 <div id="activity">

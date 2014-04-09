@@ -28,7 +28,7 @@
     <div id="outerwrap2">
         <div id="header2">
             <div id="logo">
-                <img src="/Content/images/conversion_logo.jpg" width="238" height="62" />
+                <img src="//d10yufw89ry03z.cloudfront.net/images/conversion_logo.jpg" width="238" height="62" />
 
             </div>
             <!-- end logo -->

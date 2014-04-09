@@ -55,7 +55,7 @@ body {
 }
 .header-main {
 	position:relative;
-	background: url(../content/images/header_bg.jpg) repeat-x;
+	background: url(//d10yufw89ry03z.cloudfront.net/images/header_bg.jpg) repeat-x;
 	width: 905px;
 	height: 117px;	
 }
@@ -361,7 +361,7 @@ padding-bottom: 0;
 .right_basket {
 	width: 233px;
 	padding: 20px;
-	background: url(../content/images/right_basket.jpg) no-repeat right bottom;	
+	background: url(//d10yufw89ry03z.cloudfront.net/images/right_basket.jpg) no-repeat right bottom;	
 -webkit-box-shadow: inset 0px 0px 16px 4px #d0d0d0;
 box-shadow: inset 0px 0px 16px 4px #d0d0d0; 
 margin-bottom: 30px;
@@ -783,7 +783,7 @@ margin-left: 12px;
 .upsell li {
 		list-style: none;
 	padding-left: 30px;
-	background: url(../content/images/checkmark.png) no-repeat;
+	background: url(//d10yufw89ry03z.cloudfront.net/images/checkmark.png) no-repeat;
 	padding-bottom: 20px;	
 }
 
@@ -811,7 +811,7 @@ margin-left: 12px;
 	list-style: none;
 	padding-left: 20px;
 	padding-bottom: 20px;
-	background: url(../content/images/orange_bullet.png) no-repeat 0 3px;	
+	background: url(//d10yufw89ry03z.cloudfront.net/images/orange_bullet.png) no-repeat 0 3px;	
 }
 
 .home2 {
@@ -839,7 +839,7 @@ margin-left: 12px;
 	list-style: none;
 	padding-left: 20px;
 	padding-bottom: 20px;
-	background: url(../content/images/orange_bullet.png) no-repeat 0 3px;	
+	background: url(//d10yufw89ry03z.cloudfront.net/images/orange_bullet.png) no-repeat 0 3px;	
 }
 
 .home3 {

@@ -22,7 +22,7 @@ function Clickheretoprint()
     <div class="clearfix">
     <h2 style="width: 400px; float:left; position:relative">Thank you for your order!</h2>
 
-	<a href="javascript:Clickheretoprint()" class="printer"><img src="../Content/Images/icon_print.gif" width="16" height="16" />&nbsp;Printer-Friendly</a>
+	<a href="javascript:Clickheretoprint()" class="printer"><img src="//d10yufw89ry03z.cloudfront.net/images/icon_print.gif" width="16" height="16" />&nbsp;Printer-Friendly</a>
         </div>
   
         <table width="819" border="0" cellspacing="0" cellpadding="0" id="receipt_table1">

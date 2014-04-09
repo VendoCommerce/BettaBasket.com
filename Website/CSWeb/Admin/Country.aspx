@@ -48,7 +48,7 @@
                 <td>
                     <asp:LinkButton ID="lbCancel" runat="server" CausesValidation="False" CommandName="Delete"
                         CommandArgument='<%# DataBinder.Eval(Container.DataItem, "CountryId") %>'>
-                        <asp:Image ID="Image2" runat="server" ImageUrl="/Content/images/admin/delete.gif" BorderWidth="0"
+                        <asp:Image ID="Image2" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/delete.gif" BorderWidth="0"
                             ToolTip='Delete' /></asp:LinkButton>
                 </td>
                 <td>

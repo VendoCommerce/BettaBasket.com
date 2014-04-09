@@ -579,7 +579,7 @@ namespace Com.ConversionSystems
                         {
 
                             BettaBasketBatch.com.qcmoultonordervision.ORDAPI _MoultonOrderAPI = new BettaBasketBatch.com.qcmoultonordervision.ORDAPI();
-                            
+                            _MoultonOrderAPI.Url = "https://moultonordervision.com/Ws/ORDAPI.asmx";
                             XmlNode x = null;
                             x = _MoultonOrderAPI.OrderNewAPI("TMGC_CS", "XKSb73j3j3ddcjMn0b22", _OrderOrderHeader.GROUP_CODE, _OrderOrderHeader.CL_NO, _OrderOrderHeader.PROJECT, "new_order_TMGC", xmlString);
                             //ObjectToXml(NewSalesOrder, "C:\\batchstaging\\BatchProcesses\\NonoBatchFiles\\UK\\" + NewSalesOrder.MerchantOrderNumber.ToString() + ".xml"); //For Testing

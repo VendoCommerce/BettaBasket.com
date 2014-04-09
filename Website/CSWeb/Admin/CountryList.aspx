@@ -11,7 +11,7 @@
     <table width="100%" cellpadding="2" cellspacing="1" border="0">
         <tr>
             <td width="50%">
-                <asp:Image AlternateText="Add" ID="imgAddItem" runat="server" ImageUrl='/Content/images/admin/add.gif'
+                <asp:Image AlternateText="Add" ID="imgAddItem" runat="server" ImageUrl='//d10yufw89ry03z.cloudfront.net/images/admin/add.gif'
                     BorderStyle="None"></asp:Image>
                 <asp:HyperLink ID="lbItemAdd" runat="server" CssClass="link" NavigateUrl="Country.aspx"
                     Text="Add Country"></asp:HyperLink>
@@ -55,7 +55,7 @@
                             ValidationGroup="valError" CssClass="failureNotification" ValueToCompare="0">*</asp:CompareValidator>
                     </td>
                     <td nowrap align="center" width="10%">
-                        <asp:HyperLink ID="hlAddState" runat="Server"><img title='Add States' src='/Content/images/admin/edit.gif' alt="Add States" border="0"></asp:HyperLink>&#160;
+                        <asp:HyperLink ID="hlAddState" runat="Server"><img title='Add States' src='//d10yufw89ry03z.cloudfront.net/images/admin/edit.gif' alt="Add States" border="0"></asp:HyperLink>&#160;
                     </td>
                 </tr>
             </ItemTemplate>

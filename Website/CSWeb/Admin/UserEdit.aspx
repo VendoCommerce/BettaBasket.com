@@ -85,7 +85,7 @@
                 <tr>
                     <td>
                         <asp:Image AlternateText="" runat="server" Width="100px" ID="blank1" Height="1px"
-                            ImageUrl="/Content/images/admin/1pt.gif"></asp:Image>
+                            ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/1pt.gif"></asp:Image>
                     </td>
                     <td>
                         <asp:Button runat="server" ID="btnCancel" Text="Cancel" CommandName="Cancel" OnCommand="btnAction_Command"/>

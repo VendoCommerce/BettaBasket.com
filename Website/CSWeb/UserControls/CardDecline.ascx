@@ -352,7 +352,7 @@
                 <input type="checkbox" checked="checked" class="checkbox-right" />
             </div>
             <div class="form_line_btn">
-                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/btn_try_again.png"
+                <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/btn_try_again.png"
                     CssClass="form_line_center" OnClick="imgBtn_OnClick" />
             </div>
             

@@ -14,7 +14,7 @@
     <div id="outerwrap2">
         <div id="header2">
             <div id="logo">
-                <img src="/Content/images/conversion_logo.jpg" width="238" height="62" />
+                <img src="//d10yufw89ry03z.cloudfront.net/images/conversion_logo.jpg" width="238" height="62" />
             </div>
             <!-- end logo -->
             <!-- end log_link -->
@@ -37,7 +37,7 @@
                     <h2>
                     </h2>
                     <div id="client_logo">
-                             <img src="/Content/Images/nono_logo.png" /></div>
+                             <img src="//d10yufw89ry03z.cloudfront.net/images/nono_logo.png" /></div>
                 </div>
                 <div id="retrieve_activity">
                     <h2>

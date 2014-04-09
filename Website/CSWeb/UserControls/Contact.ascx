@@ -70,7 +70,7 @@
     <p style="padding-top: 8px; float: left; width: 160px;">
         *denotes required field</p>
     <p style="padding-top: 6px; float: left; width: 234px; text-align: right;">
-        <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="/content/images/btn_submit_2.png"
+        <asp:ImageButton ID="imgBtn" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/btn_submit_2.png"
             OnClick="imgBtn_OnClick" /></p>
     <div class="clear" style="height: 200px;">
     </div>

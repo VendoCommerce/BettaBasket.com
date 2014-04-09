@@ -8,7 +8,7 @@
     <table width="100%" cellpadding="2" cellspacing="1" border="0">
         <tr>
             <td width="50%">
-                 <asp:Image AlternateText="Add" ID="Image1" runat="server" ImageUrl="/Content/images/admin/add.gif"
+                 <asp:Image AlternateText="Add" ID="Image1" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/add.gif"
                     BorderStyle="None"></asp:Image>
                 <asp:HyperLink ID="hlAddEmail" runat="server" CssClass="link" NavigateUrl="EmailItem.aspx"
                     Text="Create Email"></asp:HyperLink>
@@ -58,10 +58,10 @@
                     
                     <td nowrap align="center" width="5%" valign="top">
                             <asp:LinkButton ID="lbSave" runat="server" CausesValidation="True" CommandName="Edit">
-                                    <asp:Image ID="Image1" runat="server" ImageUrl="/Content/images/admin/edit.gif" BorderWidth="0"
+                                    <asp:Image ID="Image1" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/edit.gif" BorderWidth="0"
                                         ToolTip='Edit' /></asp:LinkButton> &#160;
                         <asp:LinkButton ID="lbRemove" runat="server" CausesValidation="False" CommandName="Delete">
-                            <asp:Image ID="Image2" runat="server" ImageUrl="/Content/images/admin/delete.gif" BorderWidth="0"
+                            <asp:Image ID="Image2" runat="server" ImageUrl="//d10yufw89ry03z.cloudfront.net/images/admin/delete.gif" BorderWidth="0"
                                 ToolTip='Delete' /></asp:LinkButton>
                     </td>
                 </tr>

@@ -21,15 +21,15 @@
     <table width="100%" cellpadding="2" cellspacing="1" border="0">
         <tr>
             <td width="50%">
-                <asp:Image AlternateText="Add" ID="imgAddItem" runat="server" ImageUrl='/Content/images/admin/add.gif'
+                <asp:Image AlternateText="Add" ID="imgAddItem" runat="server" ImageUrl='//d10yufw89ry03z.cloudfront.net/images/admin/add.gif'
                     BorderStyle="None"></asp:Image>
                 <asp:HyperLink ID="HyperLink2" runat="server" CssClass="link" NavigateUrl="Shipping.aspx"
                     Text="View Shipping"></asp:HyperLink>&nbsp;&nbsp;
-                <asp:Image AlternateText="Add" ID="Image4" runat="server" ImageUrl='/Content/images/admin/add.gif'
+                <asp:Image AlternateText="Add" ID="Image4" runat="server" ImageUrl='//d10yufw89ry03z.cloudfront.net/images/admin/add.gif'
                     BorderStyle="None"></asp:Image>
                 <asp:HyperLink ID="HyperLink1" runat="server" CssClass="link" NavigateUrl="CountryList.aspx"
                     Text="View CountryList"></asp:HyperLink>&nbsp;&nbsp;
-                <asp:Image AlternateText="Add" ID="Image1" runat="server" ImageUrl='/Content/images/admin/add.gif'
+                <asp:Image AlternateText="Add" ID="Image1" runat="server" ImageUrl='//d10yufw89ry03z.cloudfront.net/images/admin/add.gif'
                     BorderStyle="None"></asp:Image>
                 <asp:HyperLink ID="HyperLink3" runat="server" CssClass="link" NavigateUrl="TaxList.aspx"
                     Text="View TaxList"></asp:HyperLink>&nbsp;&nbsp;
