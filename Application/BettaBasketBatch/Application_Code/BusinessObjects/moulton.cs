@@ -1112,7 +1112,7 @@ namespace AhhBraBatch.Application_Code.BusinessObjects
 
         private string tAXABLE_FLAGField;
 
-        private string cONTINUITY_FLAGField;
+        //private string cONTINUITY_FLAGField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -1240,19 +1240,19 @@ namespace AhhBraBatch.Application_Code.BusinessObjects
             }
         }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string CONTINUITY_FLAG
-        {
-            get
-            {
-                return this.cONTINUITY_FLAGField;
-            }
-            set
-            {
-                this.cONTINUITY_FLAGField = value;
-            }
-        }
+    //    /// <remarks/>
+    //    [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+    //    public string CONTINUITY_FLAG
+    //    {
+    //        get
+    //        {
+    //            return this.cONTINUITY_FLAGField;
+    //        }
+    //        set
+    //        {
+    //            this.cONTINUITY_FLAGField = value;
+    //        }
+    //    }
     }
 
     /// <remarks/>

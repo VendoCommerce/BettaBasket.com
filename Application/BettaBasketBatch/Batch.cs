@@ -540,7 +540,7 @@ namespace Com.ConversionSystems
                             //_OrderOrderDetailLineItem.OFFER_CODE = "DMDR191-01";//=++++++++++++++++++++++++
                             _OrderOrderDetailLineItem.UNIT_PRICE = Math.Round(Convert.ToDouble(OrderSKUItem.FullPrice), 2).ToString();
                             //_OrderOrderDetailLineItem.UNIT_PRICE = Math.Round(Convert.ToDouble("29.95".ToString()), 2).ToString(); //=++++++++++++++++++++++++                               
-                            _OrderOrderDetailLineItem.CONTINUITY_FLAG = Helper.AppSettings["CONTINUITYFLAG"];
+                            //_OrderOrderDetailLineItem.CONTINUITY_FLAG = Helper.AppSettings["CONTINUITYFLAG"];
                             _OrderOrderDetailLineItem.OFFER_DESCRIPTION = OrderSKUItem.Title;
                             _OrderOrderDetailLineItem.QUANTITY_ORDERED = OrderSKUItem.Quantity.ToString();
                             _OrderOrderDetailLineItem.TAXABLE_FLAG = Helper.AppSettings["TAXABLEFLAG"];
